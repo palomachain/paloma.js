@@ -21,7 +21,7 @@ import {
  * Example:
  *
  * ```ts
- * import { MsgMultiSend } from "@terra-money/terra.js";
+ * import { MsgMultiSend } from "@palomachain/paloma.js";
  *
  * const inputs: MsgMultiSend.Input[] = [
  *    new MsgMultiSend.Input(
