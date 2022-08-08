@@ -1,18 +1,18 @@
 import { bech32 } from 'bech32';
 
-/** `terra-` prefixed account address */
+/** `paloma-` prefixed account address */
 export type AccAddress = string;
 
-/** `terravaloper-` prefixed validator operator address */
+/** `palomavaloper-` prefixed validator operator address */
 export type ValAddress = string;
 
-/** `terravalcons-` prefixed validator consensus address */
+/** `palomavalcons-` prefixed validator consensus address */
 export type ValConsAddress = string;
 
-/** `terrapub-` prefixed account public key */
+/** `palomapub-` prefixed account public key */
 export type AccPubKey = string;
 
-/** `terravaloperpub-` prefixed validator public key */
+/** `palomavaloperpub-` prefixed validator public key */
 export type ValPubKey = string;
 
 function checkPrefixAndLength(
@@ -37,8 +37,8 @@ export namespace AccAddress {
   export function validate(data: string): boolean {
     // 44 for normal account and 64 for contract account
     return (
-      checkPrefixAndLength('terra', data, 44) ||
-      checkPrefixAndLength('terra', data, 64)
+      checkPrefixAndLength('paloma', data, 44) ||
+      checkPrefixAndLength('paloma', data, 64)
     );
   }
 
@@ -49,7 +49,7 @@ export namespace AccAddress {
    */
   export function fromValAddress(address: ValAddress): AccAddress {
     const vals = bech32.decode(address);
-    return bech32.encode('terra', vals.words);
+    return bech32.encode('paloma', vals.words);
   }
 }
 
@@ -60,7 +60,7 @@ export namespace AccPubKey {
    */
 
   export function validate(data: string): boolean {
-    return checkPrefixAndLength('terrapub', data, 47);
+    return checkPrefixAndLength('palomapub', data, 47);
   }
 
   /**
@@ -69,7 +69,7 @@ export namespace AccPubKey {
    */
   export function fromAccAddress(address: AccAddress): AccPubKey {
     const vals = bech32.decode(address);
-    return bech32.encode('terrapub', vals.words);
+    return bech32.encode('palomapub', vals.words);
   }
 }
 
@@ -80,7 +80,7 @@ export namespace ValAddress {
    * @param data string to check
    */
   export function validate(data: string): boolean {
-    return checkPrefixAndLength('terravaloper', data, 51);
+    return checkPrefixAndLength('palomavaloper', data, 51);
   }
 
   /**
@@ -89,7 +89,7 @@ export namespace ValAddress {
    */
   export function fromAccAddress(address: AccAddress): ValAddress {
     const vals = bech32.decode(address);
-    return bech32.encode('terravaloper', vals.words);
+    return bech32.encode('palomavaloper', vals.words);
   }
 }
 
@@ -99,7 +99,7 @@ export namespace ValPubKey {
    * @param data string to check
    */
   export function validate(data: string): boolean {
-    return checkPrefixAndLength('terravaloperpub', data, 54);
+    return checkPrefixAndLength('palomavaloperpub', data, 54);
   }
 
   /**
@@ -108,7 +108,7 @@ export namespace ValPubKey {
    */
   export function fromValAddress(valAddress: ValAddress): ValPubKey {
     const vals = bech32.decode(valAddress);
-    return bech32.encode('terravaloperpub', vals.words);
+    return bech32.encode('palomavaloperpub', vals.words);
   }
 }
 
@@ -119,6 +119,6 @@ export namespace ValConsAddress {
    */
 
   export function validate(data: string): boolean {
-    return checkPrefixAndLength('terravalcons', data, 51);
+    return checkPrefixAndLength('palomavalcons', data, 51);
   }
 }

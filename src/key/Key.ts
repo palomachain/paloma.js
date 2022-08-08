@@ -29,7 +29,7 @@ export abstract class Key {
   public abstract sign(payload: Buffer): Promise<Buffer>;
 
   /**
-   * Terra account address. `terra-` prefixed.
+   * Terra account address. `paloma-` prefixed.
    */
   public get accAddress(): AccAddress {
     if (!this.publicKey) {
@@ -40,7 +40,7 @@ export abstract class Key {
   }
 
   /**
-   * Terra validator address. `terravaloper-` prefixed.
+   * Terra validator address. `palomavaloper-` prefixed.
    */
   public get valAddress(): ValAddress {
     if (!this.publicKey) {
@@ -48,7 +48,7 @@ export abstract class Key {
     }
 
     return bech32.encode(
-      'terravaloper',
+      'palomavaloper',
       bech32.toWords(this.publicKey.rawAddress())
     );
   }
