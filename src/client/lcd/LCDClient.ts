@@ -71,12 +71,6 @@ const DEFAULT_GAS_PRICES_BY_CHAIN_ID: { [key: string]: Coins.Input } = {
   'paloma-testnet-6': {
     ugrain: 0.015,
   },
-  'paloma-12': {
-    ugrain: 0.015,
-  },
-  'pisco-1': {
-    uluna: 0.15,
-  },
 };
 
 /**

@@ -95,12 +95,6 @@ const lcd = new LCDClient({
 
 
 
-// get the current swap rate from 1 ugrain to TerraKRW
-const offerCoin = new Coin('ugrain', '1000000');
-lcd.market.swapRate(offerCoin, 'ukrw').then(c => {
-  console.log(`${offerCoin.toString()} can be swapped for ${c.toString()}`);
-});
-
 ```
 
 ### Broadcasting transactions
@@ -132,7 +126,7 @@ const wallet = lcd.wallet(mk);
 const send = new MsgSend(
   'paloma1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v',
   'paloma17lmam6zguazs5q5u6z5mmx76uj63gldnse2pdp',
-  { uluna: 1000000, ukrw: 1230201, uusd: 1312029 }
+  { ugrain: 1000000 }
 );
 
 wallet
@@ -148,7 +142,7 @@ wallet
 
 ## Paloma.js in the browser
 
-You can access all the objects of the `@palomachain/paloma.js` from the global `Terra` object if you load Terra.js with a `<script>` tag.
+You can access all the objects of the `@palomachain/paloma.js` from the global `Paloma` object if you load Terra.js with a `<script>` tag.
 
 Include the following in your browser:
 
