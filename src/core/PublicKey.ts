@@ -150,11 +150,11 @@ export class SimplePublicKey extends JSONSerializable<
   }
 
   public address(): string {
-    return bech32.encode('terra', bech32.toWords(this.rawAddress()));
+    return bech32.encode('paloma', bech32.toWords(this.rawAddress()));
   }
 
   public pubkeyAddress(): string {
-    return bech32.encode('terrapub', bech32.toWords(this.encodeAminoPubkey()));
+    return bech32.encode('palomapub', bech32.toWords(this.encodeAminoPubkey()));
   }
 }
 
@@ -200,11 +200,11 @@ export class LegacyAminoMultisigPublicKey extends JSONSerializable<
   }
 
   public address(): string {
-    return bech32.encode('terra', bech32.toWords(this.rawAddress()));
+    return bech32.encode('paloma', bech32.toWords(this.rawAddress()));
   }
 
   public pubkeyAddress(): string {
-    return bech32.encode('terrapub', bech32.toWords(this.encodeAminoPubkey()));
+    return bech32.encode('palomapub', bech32.toWords(this.encodeAminoPubkey()));
   }
 
   public static fromAmino(
@@ -360,12 +360,12 @@ export class ValConsPublicKey extends JSONSerializable<
   }
 
   public address(): string {
-    return bech32.encode('terravalcons', bech32.toWords(this.rawAddress()));
+    return bech32.encode('palomavalcons', bech32.toWords(this.rawAddress()));
   }
 
   public pubkeyAddress(): string {
     return bech32.encode(
-      'terravalconspub',
+      'palomavalconspub',
       bech32.toWords(this.encodeAminoPubkey())
     );
   }

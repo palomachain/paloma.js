@@ -1,9 +1,9 @@
 {
-  "name": "@terra-money/terra.js",
-  "version": "3.1.4",
-  "description": "The JavaScript SDK for Terra",
+  "name": "@palomachain/paloma.js",
+  "version": "3.0.15",
+  "description": "The JavaScript SDK for paloma",
   "license": "MIT",
-  "author": "Terraform Labs, PTE.",
+  "author": "",
   "keywords": [
     "terra",
     "stablecoin",
@@ -17,7 +17,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/terra-money/terra.js.git"
+    "url": "https://github.com/palomachain/paloma.js.git"
   },
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",

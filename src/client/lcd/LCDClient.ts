@@ -66,16 +66,10 @@ const DEFAULT_NETWORK_TYPE_BY_CHAIN_ID: { [key: string]: boolean } = {
 
 const DEFAULT_GAS_PRICES_BY_CHAIN_ID: { [key: string]: Coins.Input } = {
   default: {
-    uluna: 0.15,
+    ugrain: 0.015,
   },
-  'columbus-5': {
-    uusd: 0.15,
-  },
-  'bombay-12': {
-    uusd: 0.15,
-  },
-  'pisco-1': {
-    uluna: 0.15,
+  'paloma-testnet-6': {
+    ugrain: 0.015,
   },
 };
 
