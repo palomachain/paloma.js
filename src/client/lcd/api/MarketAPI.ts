@@ -4,15 +4,15 @@ import { LCDClient } from '../LCDClient';
 import { BaseAPI } from './BaseAPI';
 
 export interface MarketParams {
-  /** Number of blocks it takes for the Terra & Luna pools to naturally "reset" towards
+  /** Number of blocks it takes for the Paloma & Luna pools to naturally "reset" towards
    * equilibrium through automated pool replenishing.
    */
   pool_recovery_period: number;
 
-  /** Initial starting size of both Luna and Terra mint liquidity pools. */
+  /** Initial starting size of both Luna and Paloma mint liquidity pools. */
   base_pool: Dec;
 
-  /** Minimum spread charged on Terra<>Luna swaps to prevent leaking value from front-running attacks. */
+  /** Minimum spread charged on Paloma<>Luna swaps to prevent leaking value from front-running attacks. */
   min_stability_spread: Dec;
 }
 
@@ -55,7 +55,7 @@ export class MarketAPI extends BaseAPI {
   }
 
   /**
-   * Gets current value of the pool delta, which is used to determine Terra<>Luna swap rates.
+   * Gets current value of the pool delta, which is used to determine Paloma<>Luna swap rates.
    */
   public async poolDelta(params: APIParams = {}): Promise<Dec> {
     if (!this.lcd.config.isClassic) {

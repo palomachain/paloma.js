@@ -57,7 +57,7 @@ export class CLIKey extends Key {
   }
 
   /**
-   * Terra account address. `terra-` prefixed.
+   * Terra account address. `paloma-` prefixed.
    */
   public get accAddress(): AccAddress {
     if (!this._accAddress) {
@@ -68,7 +68,7 @@ export class CLIKey extends Key {
   }
 
   /**
-   * Terra validator address. `terravaloper-` prefixed.
+   * Terra validator address. `palomavaloper-` prefixed.
    */
   public get valAddress(): ValAddress {
     if (!this._accAddress) {

@@ -82,7 +82,6 @@ console.log(balance.toData());
 ```
 
 ### Getting blockchain data
-:exclamation: terra.js can connect both terra-classic and terra network. If you want to communicate with classic chain, you have to set isClassic as `true`.
 ```ts
 import { LCDClient, Coin } from '@palomachain/paloma.js';
 

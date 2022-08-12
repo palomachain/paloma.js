@@ -134,7 +134,7 @@ export class Extension {
    * Request to Station Extension for connecting a wallet
    *
    * @return {string}     name      'onConnect'
-   * @return {AccAddress} payload   Terra account address
+   * @return {AccAddress} payload   Paloma account address
    */
   connect(): number {
     return this.send('connect');

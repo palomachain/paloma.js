@@ -138,7 +138,7 @@ export class OracleAPI extends BaseAPI {
 
   /**
    * Gets the registered feeder address associated with the validator. The feeder address is the
-   * Terra account that is permitted to sign Oracle vote messages in the validator's name.
+   * Paloma account that is permitted to sign Oracle vote messages in the validator's name.
    * @param validator validator's operator address
    */
   public async feederAddress(

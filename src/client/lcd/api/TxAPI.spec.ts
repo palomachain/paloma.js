@@ -10,13 +10,13 @@ const mk = new MnemonicKey({
     'sound hour era feature bacon code drift deal raw toward soldier nation winter consider tissue jewel script result mean faculty water exist lunch betray',
 });
 
-const terra = new LCDClient({
+const paloma = new LCDClient({
   chainID: 'pisco-1',
-  URL: 'https://pisco-lcd.terra.dev',
+  URL: 'https://pisco-lcd.paloma.dev',
 });
 
-const txAPI = new TxAPI(terra);
-const wallet = terra.wallet(mk);
+const txAPI = new TxAPI(paloma);
+const wallet = paloma.wallet(mk);
 
 describe('TxAPI', () => {
   describe('broadcast', () => {
@@ -102,8 +102,8 @@ describe('TxAPI', () => {
       });
 
       const send = new MsgSend(
-        'terra1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8',
-        'terra1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8',
+        'paloma1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8',
+        'paloma1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8',
         { uluna: '1000000' }
       );
 
@@ -124,8 +124,8 @@ describe('TxAPI', () => {
       });
 
       const send = new MsgSend(
-        'terra1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8',
-        'terra1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8',
+        'paloma1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8',
+        'paloma1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8',
         { uluna: '1' }
       );
 

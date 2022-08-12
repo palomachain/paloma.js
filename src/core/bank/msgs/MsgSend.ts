@@ -7,7 +7,7 @@ import { Any } from '@terra-money/legacy.proto/google/protobuf/any';
 import { MsgSend as MsgSend_pb } from '@terra-money/terra.proto/cosmos/bank/v1beta1/tx';
 
 /**
- * A basic message for sending [[Coins]] between Terra accounts.
+ * A basic message for sending [[Coins]] between Paloma accounts.
  */
 export class MsgSend extends JSONSerializable<
   MsgSend.Amino,

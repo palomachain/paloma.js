@@ -5,7 +5,7 @@ import { Coin, Validator } from '../../core';
 const lcdUtils = new LCDUtils(
   new LCDClient({
     chainID: 'pisco-1',
-    URL: 'https://pisco-lcd.terra.dev',
+    URL: 'https://pisco-lcd.paloma.dev',
   })
 );
 

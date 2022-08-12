@@ -1,16 +1,16 @@
 import { LCDClient } from '../LCDClient';
 import { BankAPI } from './BankAPI';
 
-const terra = new LCDClient({
+const paloma = new LCDClient({
   chainID: 'pisco-1',
-  URL: 'https://pisco-lcd.terra.dev',
+  URL: 'https://pisco-lcd.paloma.dev',
 });
-const bank = new BankAPI(terra);
+const bank = new BankAPI(paloma);
 
 describe('BankAPI', () => {
   describe('balance', () => {
     it('account exists', async () => {
-      await bank.balance('terra1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v');
+      await bank.balance('paloma1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v');
     });
 
     it('invalid account', async () => {

@@ -13,10 +13,10 @@ describe('APIRequester', () => {
   it('accept a standard URL', async () => {
     mockedAxios.get.mockResolvedValueOnce({ data: null });
 
-    const request = new APIRequester('https://lcd.terra.dev');
+    const request = new APIRequester('https://lcd.paloma.dev');
     await request.get('/foo');
 
-    expect(mockedAxios.get).toHaveBeenCalledWith('https://lcd.terra.dev/foo', {
+    expect(mockedAxios.get).toHaveBeenCalledWith('https://lcd.paloma.dev/foo', {
       params: {},
     });
   });
@@ -24,11 +24,11 @@ describe('APIRequester', () => {
   it('accept a deep URL', async () => {
     mockedAxios.get.mockResolvedValueOnce({ data: null });
 
-    const request = new APIRequester('https://lcd.terra.dev/bar');
+    const request = new APIRequester('https://lcd.paloma.dev/bar');
     await request.get('/foo');
 
     expect(mockedAxios.get).toHaveBeenCalledWith(
-      'https://lcd.terra.dev/bar/foo',
+      'https://lcd.paloma.dev/bar/foo',
       { params: {} }
     );
   });
@@ -36,11 +36,11 @@ describe('APIRequester', () => {
   it('accept an URL with search params', async () => {
     mockedAxios.get.mockResolvedValueOnce({ data: null });
 
-    const request = new APIRequester('https://lcd.terra.dev?key=123');
+    const request = new APIRequester('https://lcd.paloma.dev?key=123');
     await request.get('/foo');
 
     expect(mockedAxios.get).toHaveBeenCalledWith(
-      'https://lcd.terra.dev/foo?key=123',
+      'https://lcd.paloma.dev/foo?key=123',
       { params: {} }
     );
   });
@@ -48,11 +48,11 @@ describe('APIRequester', () => {
   it('accept an URL with credentials', async () => {
     mockedAxios.get.mockResolvedValueOnce({ data: null });
 
-    const request = new APIRequester('https://:123@lcd.terra.dev');
+    const request = new APIRequester('https://:123@lcd.paloma.dev');
     await request.get('/foo');
 
     expect(mockedAxios.get).toHaveBeenCalledWith(
-      'https://:123@lcd.terra.dev/foo',
+      'https://:123@lcd.paloma.dev/foo',
       { params: {} }
     );
   });

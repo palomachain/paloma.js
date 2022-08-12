@@ -2,11 +2,11 @@ import { SlashingAPI } from './SlashingAPI';
 import { Dec } from '../../../core/numeric';
 import { LCDClient } from '../LCDClient';
 
-const terra = new LCDClient({
+const paloma = new LCDClient({
   chainID: 'pisco-1',
-  URL: 'https://pisco-lcd.terra.dev',
+  URL: 'https://pisco-lcd.paloma.dev',
 });
-const slashing = new SlashingAPI(terra);
+const slashing = new SlashingAPI(paloma);
 
 describe('SlashingAPI', () => {
   it('parameters', async () => {

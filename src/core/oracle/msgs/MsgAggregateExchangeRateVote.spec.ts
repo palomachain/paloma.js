@@ -9,8 +9,8 @@ describe('MsgAggregateExchangeRateVote', () => {
         usdr: '0.182',
       },
       'salt',
-      'terra1krj7amhhagjnyg2tkkuh6l0550y733jnjulzjh',
-      'terravaloper1krj7amhhagjnyg2tkkuh6l0550y733jnjnnlzy'
+      'paloma1krj7amhhagjnyg2tkkuh6l0550y733jnjulzjh',
+      'palomavaloper1krj7amhhagjnyg2tkkuh6l0550y733jnjnnlzy'
     );
     msg.getPrevote();
     expect(msg.getAggregateVoteHash()).toEqual(
@@ -25,8 +25,8 @@ describe('MsgAggregateExchangeRateVote', () => {
         usdr: '0.182',
       },
       'salt',
-      'terra1krj7amhhagjnyg2tkkuh6l0550y733jnjulzjh',
-      'terravaloper1krj7amhhagjnyg2tkkuh6l0550y733jnjnnlzy'
+      'paloma1krj7amhhagjnyg2tkkuh6l0550y733jnjulzjh',
+      'palomavaloper1krj7amhhagjnyg2tkkuh6l0550y733jnjnnlzy'
     );
     const anyObj = msg.packAny(true);
     expect(MsgAggregateExchangeRateVote.unpackAny(anyObj, true)).toBeDefined();

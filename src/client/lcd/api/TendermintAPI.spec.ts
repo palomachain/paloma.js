@@ -3,11 +3,11 @@ import { Tx } from '../../../core/Tx';
 import { Tx as Tx_pb } from '@terra-money/legacy.proto/cosmos/tx/v1beta1/tx';
 import { LCDClient } from '../LCDClient';
 
-const terra = new LCDClient({
+const paloma = new LCDClient({
   chainID: 'pisco-1',
-  URL: 'https://pisco-lcd.terra.dev',
+  URL: 'https://pisco-lcd.paloma.dev',
 });
-const tendermint = new TendermintAPI(terra);
+const tendermint = new TendermintAPI(paloma);
 
 describe('TendermintAPI', () => {
   it('load block and decode txs', async () => {

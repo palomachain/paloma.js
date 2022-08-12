@@ -13,7 +13,7 @@ describe('PublicKey', () => {
     ]);
 
     expect(pubkey.address()).toEqual(
-      'terra1gufrav46pnpwf03yu7xz76ylkmatsxtplrxnmc'
+      'paloma1gufrav46pnpwf03yu7xz76ylkmatsxtplrxnmc'
     );
   });
 
@@ -22,7 +22,7 @@ describe('PublicKey', () => {
       'AjszqFJDRAYbEjZMuiD+ChqzbUSGq/RRu3zr0R6iJB5b'
     );
     expect(pubkey.address()).toEqual(
-      'terra1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v'
+      'paloma1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v'
     );
   });
 
@@ -31,7 +31,7 @@ describe('PublicKey', () => {
       'zC1zhckGr/0ZjlXkRbD575N0KC+yhWKYcEFDueBTX5o='
     );
     expect(pubkey.address()).toEqual(
-      'terravalcons1mlhj044zpxqdeaajfxpnav59rp4ap38t5e7q46'
+      'palomavalcons1mlhj044zpxqdeaajfxpnav59rp4ap38t5e7q46'
     );
   });
 });

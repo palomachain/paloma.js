@@ -87,7 +87,7 @@ function makeQueryParams(query: TendermintQuery): string {
 }
 
 /**
- * An object repesenting a connection to a Terra node's WebSocket RPC endpoint.
+ * An object repesenting a connection to a Paloma node's WebSocket RPC endpoint.
  * This allows for subscribing to Tendermint events through WebSocket.
  *
  * ### Events

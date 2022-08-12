@@ -2,11 +2,11 @@ import { Height } from '../../../core/ibc/core/client/Height';
 import { LCDClient } from '../LCDClient';
 import { IbcAPI } from './IbcAPI';
 
-const terra = new LCDClient({
+const paloma = new LCDClient({
   chainID: 'pisco-1',
-  URL: 'https://pisco-lcd.terra.dev',
+  URL: 'https://pisco-lcd.paloma.dev',
 });
-const ibc = new IbcAPI(terra);
+const ibc = new IbcAPI(paloma);
 
 describe('IbcClientAPI', () => {
   it('params', async () => {

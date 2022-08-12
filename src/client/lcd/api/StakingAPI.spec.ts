@@ -5,15 +5,15 @@ import { ValConsPublicKey, Delegation } from '../../../core';
 import { LCDClient } from '../LCDClient';
 import { MnemonicKey } from '../../../key';
 
-const terra = new LCDClient({
+const paloma = new LCDClient({
   chainID: 'pisco-1',
-  URL: 'https://pisco-lcd.terra.dev',
+  URL: 'https://pisco-lcd.paloma.dev',
 });
 const test1 = new MnemonicKey({
   mnemonic:
     'notice oak worry limit wrap speak medal online prefer cluster roof addict wrist behave treat actual wasp year salad speed social layer crew genius',
 });
-const staking = new StakingAPI(terra);
+const staking = new StakingAPI(paloma);
 
 const checkDelegations = (delegations: Delegation[]) => {
   expect(delegations).toContainEqual({
@@ -40,7 +40,7 @@ const checkDelegations = (delegations: Delegation[]) => {
 // };
 
 const delegator = test1.accAddress;
-const validator = 'terravaloper1gtw2uxdkdt3tvq790ckjz8jm8qgwkdw3uptstn';
+const validator = 'palomavaloper1gtw2uxdkdt3tvq790ckjz8jm8qgwkdw3uptstn';
 
 describe('StakingAPI', () => {
   it('parameters', async () => {

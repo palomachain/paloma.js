@@ -3,11 +3,11 @@ import { DistributionAPI } from './DistributionAPI';
 import { Dec, Coins } from '../../../core';
 import { LCDClient } from '../LCDClient';
 
-const terra = new LCDClient({
+const paloma = new LCDClient({
   chainID: 'pisco-1',
-  URL: 'https://pisco-lcd.terra.dev',
+  URL: 'https://pisco-lcd.paloma.dev',
 });
-const distribution = new DistributionAPI(terra);
+const distribution = new DistributionAPI(paloma);
 
 // distributionForTest()
 describe('DistributionAPI', () => {
@@ -22,7 +22,7 @@ describe('DistributionAPI', () => {
 
   it('rewards', async () => {
     await expect(
-      distribution.rewards('terra1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v')
+      distribution.rewards('paloma1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v')
     ).resolves.toMatchObject({
       rewards: expect.anything(),
       total: expect.any(Coins),
@@ -36,9 +36,9 @@ describe('DistributionAPI', () => {
   it('withdrawAddress', async () => {
     await expect(
       distribution.withdrawAddress(
-        'terra1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v'
+        'paloma1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v'
       )
-    ).resolves.toEqual('terra1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v');
+    ).resolves.toEqual('paloma1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v');
   });
 
   it('communityPool', async () => {

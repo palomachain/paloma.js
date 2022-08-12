@@ -2,11 +2,11 @@ import { Plan } from '../../../core';
 import { LCDClient } from '../LCDClient';
 import { UpgradeAPI } from './UpgradeAPI.ts';
 
-const terra = new LCDClient({
+const paloma = new LCDClient({
   chainID: 'pisco-1',
-  URL: 'https://pisco-lcd.terra.dev',
+  URL: 'https://pisco-lcd.paloma.dev',
 });
-const upgrade = new UpgradeAPI(terra);
+const upgrade = new UpgradeAPI(paloma);
 
 describe('UpgradeAPI', () => {
   describe('applied_plan', () => {

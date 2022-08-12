@@ -29,7 +29,7 @@ export abstract class Key {
   public abstract sign(payload: Buffer): Promise<Buffer>;
 
   /**
-   * Terra account address. `paloma-` prefixed.
+   * Paloma account address. `paloma-` prefixed.
    */
   public get accAddress(): AccAddress {
     if (!this.publicKey) {
@@ -40,7 +40,7 @@ export abstract class Key {
   }
 
   /**
-   * Terra validator address. `palomavaloper-` prefixed.
+   * Paloma validator address. `palomavaloper-` prefixed.
    */
   public get valAddress(): ValAddress {
     if (!this.publicKey) {

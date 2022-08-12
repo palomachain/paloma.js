@@ -1,13 +1,13 @@
 import { GovAPI } from './GovAPI';
 import { Coins, Dec, Int, Proposal } from '../../../core';
-import { Deposit } from '@terra-money/terra.proto/cosmos/gov/v1beta1/gov';
+import { Deposit } from '@terra-money/paloma.proto/cosmos/gov/v1beta1/gov';
 import { LCDClient } from '../LCDClient';
 
-const terra = new LCDClient({
+const paloma = new LCDClient({
   chainID: 'pisco-1',
-  URL: 'https://pisco-lcd.terra.dev',
+  URL: 'https://pisco-lcd.paloma.dev',
 });
-const gov = new GovAPI(terra);
+const gov = new GovAPI(paloma);
 
 describe('GovAPI', () => {
   it('parameters', async () => {

@@ -18,9 +18,9 @@ describe('MsgDelegate', () => {
     const send = MsgDelegate.fromAmino({
       type: 'cosmos-sdk/MsgDelegate',
       value: {
-        delegator_address: 'terra1y4umfuqfg76t8mfcff6zzx7elvy93jtp4xcdvw',
+        delegator_address: 'paloma1y4umfuqfg76t8mfcff6zzx7elvy93jtp4xcdvw',
         validator_address:
-          'terravaloper1guxk2q4wn92fw0mchx2rhsenjvq0hj9pzp0ngt',
+          'palomavaloper1guxk2q4wn92fw0mchx2rhsenjvq0hj9pzp0ngt',
         amount: {
           denom: 'uluna',
           amount: '8102024952',
@@ -29,17 +29,17 @@ describe('MsgDelegate', () => {
     });
 
     expect(send).toMatchObject({
-      delegator_address: 'terra1y4umfuqfg76t8mfcff6zzx7elvy93jtp4xcdvw',
-      validator_address: 'terravaloper1guxk2q4wn92fw0mchx2rhsenjvq0hj9pzp0ngt',
+      delegator_address: 'paloma1y4umfuqfg76t8mfcff6zzx7elvy93jtp4xcdvw',
+      validator_address: 'palomavaloper1guxk2q4wn92fw0mchx2rhsenjvq0hj9pzp0ngt',
       amount: new Coin('uluna', '8102024952'),
     });
 
     expect(send.toAmino()).toMatchObject({
       type: 'cosmos-sdk/MsgDelegate',
       value: {
-        delegator_address: 'terra1y4umfuqfg76t8mfcff6zzx7elvy93jtp4xcdvw',
+        delegator_address: 'paloma1y4umfuqfg76t8mfcff6zzx7elvy93jtp4xcdvw',
         validator_address:
-          'terravaloper1guxk2q4wn92fw0mchx2rhsenjvq0hj9pzp0ngt',
+          'palomavaloper1guxk2q4wn92fw0mchx2rhsenjvq0hj9pzp0ngt',
         amount: {
           denom: 'uluna',
           amount: '8102024952',
