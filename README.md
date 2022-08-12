@@ -141,7 +141,7 @@ wallet
 
 ## Paloma.js in the browser
 
-You can access all the objects of the `@palomachain/paloma.js` from the global `Paloma` object if you load Terra.js with a `<script>` tag.
+You can access all the objects of the `@palomachain/paloma.js` from the global `Paloma` object if you load Paloma.js with a `<script>` tag.
 
 Include the following in your browser:
 
