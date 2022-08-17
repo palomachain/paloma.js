@@ -36,9 +36,10 @@ export namespace AccAddress {
    */
   export function validate(data: string): boolean {
     // 44 for normal account and 64 for contract account
+    //const vals = bech32.decode(data);
     return (
-      checkPrefixAndLength('paloma', data, 44) ||
-      checkPrefixAndLength('paloma', data, 64)
+      checkPrefixAndLength('paloma', data, 45) ||
+      checkPrefixAndLength('paloma', data, 65)
     );
   }
 
@@ -60,7 +61,7 @@ export namespace AccPubKey {
    */
 
   export function validate(data: string): boolean {
-    return checkPrefixAndLength('palomapub', data, 47);
+    return checkPrefixAndLength('palomapub', data, 48);
   }
 
   /**
@@ -80,7 +81,7 @@ export namespace ValAddress {
    * @param data string to check
    */
   export function validate(data: string): boolean {
-    return checkPrefixAndLength('palomavaloper', data, 51);
+    return checkPrefixAndLength('palomavaloper', data, 52);
   }
 
   /**
@@ -99,7 +100,7 @@ export namespace ValPubKey {
    * @param data string to check
    */
   export function validate(data: string): boolean {
-    return checkPrefixAndLength('palomavaloperpub', data, 54);
+    return checkPrefixAndLength('palomavaloperpub', data, 55);
   }
 
   /**
@@ -119,6 +120,6 @@ export namespace ValConsAddress {
    */
 
   export function validate(data: string): boolean {
-    return checkPrefixAndLength('palomavalcons', data, 51);
+    return checkPrefixAndLength('palomavalcons', data, 52);
   }
 }

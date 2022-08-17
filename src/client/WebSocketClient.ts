@@ -114,7 +114,7 @@ function makeQueryParams(query: TendermintQuery): string {
  * 'Tx',
  *  {
  *    'message.action': 'send',
- *    'message.sender': ['CONTAINS', 'terra1...'],
+ *    'message.sender': ['CONTAINS', 'paloma1...'],
  *  },
  *  (data) => {
  *    console.log(data.value);

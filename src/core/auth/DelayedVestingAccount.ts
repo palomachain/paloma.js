@@ -2,9 +2,9 @@ import { JSONSerializable } from '../../util/json';
 import { BaseVestingAccount } from './BaseVestingAccount';
 import { PublicKey } from '../PublicKey';
 
-import { BaseVestingAccount as BaseVestingAccount_pb } from '@terra-money/terra.proto/cosmos/vesting/v1beta1/vesting';
-import { DelayedVestingAccount as DelayedVestingAccount_pb } from '@terra-money/terra.proto/cosmos/vesting/v1beta1/vesting';
-import { Any } from '@terra-money/terra.proto/google/protobuf/any';
+import { BaseVestingAccount as BaseVestingAccount_pb } from '@palomachain/paloma.proto/cosmos/vesting/v1beta1/vesting';
+import { DelayedVestingAccount as DelayedVestingAccount_pb } from '@palomachain/paloma.proto/cosmos/vesting/v1beta1/vesting';
+import { Any } from '@palomachain/paloma.proto/google/protobuf/any';
 
 /**
  * DelayedVestingAccount implements the VestingAccount interface. It vests all

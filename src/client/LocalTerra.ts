@@ -45,7 +45,7 @@ export class LocalTerra extends LCDClient {
   constructor(isClassic?: boolean) {
     super({
       URL: 'http://localhost:1317',
-      chainID: 'localterra',
+      chainID: 'localpaloma',
       isClassic,
     });
 

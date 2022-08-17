@@ -1,5 +1,5 @@
 import { LCDClient, MsgSend, MnemonicKey } from '../src';
-import { SignMode } from '@terra-money/terra.proto/cosmos/tx/signing/v1beta1/signing';
+import { SignMode } from '@palomachain/paloma.proto/cosmos/tx/signing/v1beta1/signing';
 
 async function main() {
   // create a key out of a mnemonic
@@ -10,7 +10,7 @@ async function main() {
 
   const bombay = new LCDClient({
     chainID: 'bombay-12',
-    URL: 'https://bombay-lcd.terra.dev',
+    URL: 'https://bombay-lcd.paloma.dev',
     gasPrices: { uusd: 0.38 },
   });
 
@@ -20,15 +20,15 @@ async function main() {
 
   // create a simple message that moves coin balances
   const send = new MsgSend(
-    'terra1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v',
-    'terra17lmam6zguazs5q5u6z5mmx76uj63gldnse2pdp',
+    'paloma1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v',
+    'paloma17lmam6zguazs5q5u6z5mmx76uj63gldnse2pdp',
     { uusd: 1312029 }
   );
 
   wallet
     .createAndSignTx({
       msgs: [send],
-      memo: 'test from terra.js!',
+      memo: 'test from paloma.js!',
       gas: '109504',
       signMode: SignMode.SIGN_MODE_LEGACY_AMINO_JSON,
     })

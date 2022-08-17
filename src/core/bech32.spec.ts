@@ -29,22 +29,18 @@ describe('AccAddress', () => {
     expect(AccAddress.validate(badAddress)).toBe(false);
     // normal account address
     expect(
-      AccAddress.validate('paloma1pdx498r0hrc2fj36sjhs8vuhrz9hd2cw0tmam9')
+      AccAddress.validate('paloma17tsule2h035rlqwjs2q828kjtwf59f8w5ntz9s')
     ).toBe(true);
     // contract account address
     expect(
-      AccAddress.validate(
-        'paloma1uj9dm5xdm34fy5xwd84lfakarcnlpxw0ppgy7vpsruj0vtks29cqn0ztcs'
-      )
+      AccAddress.validate('paloma17tsule2h035rlqwjs2q828kjtwf59f8w5ntz9s')
     ).toBe(true);
   });
 
   it('converts from validator address', () => {
     expect(
-      AccAddress.fromValAddress(
-        'palomavaloper1pdx498r0hrc2fj36sjhs8vuhrz9hd2cw0yhqtk'
-      )
-    ).toEqual('paloma1pdx498r0hrc2fj36sjhs8vuhrz9hd2cw0tmam9');
+      AccAddress.fromValAddress('paloma17tsule2h035rlqwjs2q828kjtwf59f8w5ntz9s')
+    ).toEqual('paloma17tsule2h035rlqwjs2q828kjtwf59f8w5ntz9s');
   });
 });
 
@@ -57,15 +53,15 @@ describe('ValAddress', () => {
 
     expect(
       ValAddress.validate(
-        'palomavaloper1pdx498r0hrc2fj36sjhs8vuhrz9hd2cw0yhqtk'
+        'palomavaloper17tsule2h035rlqwjs2q828kjtwf59f8wmru7nr'
       )
     ).toBe(true);
   });
 
   it('converts from account address', () => {
     expect(
-      ValAddress.fromAccAddress('paloma1pdx498r0hrc2fj36sjhs8vuhrz9hd2cw0tmam9')
-    ).toEqual('palomavaloper1pdx498r0hrc2fj36sjhs8vuhrz9hd2cw0yhqtk');
+      ValAddress.fromAccAddress('paloma17tsule2h035rlqwjs2q828kjtwf59f8w5ntz9s')
+    ).toEqual('palomavaloper17tsule2h035rlqwjs2q828kjtwf59f8wmru7nr');
   });
 });
 
@@ -82,14 +78,14 @@ describe('AccPubKey', () => {
 
     expect(AccPubKey.validate(badPubKey)).toBe(false);
     expect(
-      AccPubKey.validate('palomapub1x46rqay4d3cssq8gxxvqz8xt6nwlz4tdh39t77')
+      AccPubKey.validate('palomapub17tsule2h035rlqwjs2q828kjtwf59f8wlpqfun')
     ).toBe(true);
   });
 
   it('converts from validator pubkey', () => {
     expect(
-      AccPubKey.fromAccAddress('paloma1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v')
-    ).toEqual('palomapub1x46rqay4d3cssq8gxxvqz8xt6nwlz4tdh39t77');
+      AccPubKey.fromAccAddress('paloma17tsule2h035rlqwjs2q828kjtwf59f8w5ntz9s')
+    ).toEqual('palomapub17tsule2h035rlqwjs2q828kjtwf59f8wlpqfun');
   });
 });
 
@@ -97,7 +93,7 @@ describe('ValPubKey', () => {
   it('validates validator pubkey', () => {
     expect(
       ValPubKey.validate(
-        'palomavaloperpub12g4nkvsjjnl0t7fvq3hdcw7y8dc9fq69gvd5ag'
+        'palomavaloperpub17tsule2h035rlqwjs2q828kjtwf59f8w3zfjvp'
       )
     ).toBe(true);
 
@@ -113,18 +109,19 @@ describe('ValPubKey', () => {
   it('converts from validator address', () => {
     expect(
       ValPubKey.fromValAddress(
-        'palomavaloper12g4nkvsjjnl0t7fvq3hdcw7y8dc9fq69nyeu9q'
+        'palomavaloper17tsule2h035rlqwjs2q828kjtwf59f8wmru7nr'
       )
-    ).toEqual('palomavaloperpub12g4nkvsjjnl0t7fvq3hdcw7y8dc9fq69gvd5ag');
+    ).toEqual('palomavaloperpub17tsule2h035rlqwjs2q828kjtwf59f8w3zfjvp');
   });
 });
 
 describe('ValConsAddress', () => {
   it('validate validator consensus address', () => {
-    expect(
-      ValConsAddress.validate(
-        'palomavalcons1relcztayk87c3r529rqf3fwdmn8hr6rhcgyrxd'
-      )
-    ).toBeTruthy();
+    const vals = bech32.decode(
+      'palomavaloper17tsule2h035rlqwjs2q828kjtwf59f8wmru7nr'
+    );
+    const valConAddress = bech32.encode('palomavalcons', vals.words);
+
+    expect(ValConsAddress.validate(valConAddress)).toBeTruthy();
   });
 });

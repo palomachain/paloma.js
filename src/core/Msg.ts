@@ -79,7 +79,7 @@ import {
   IbcChannelMsg,
 } from './ibc/msgs/channel';
 import { MsgVerifyInvariant, CrisisMsg } from './crisis';
-import { Any } from '@terra-money/terra.proto/google/protobuf/any';
+import { Any } from '@palomachain/paloma.proto/google/protobuf/any';
 
 export type Msg =
   | BankMsg
@@ -299,9 +299,9 @@ export namespace Msg {
         return MsgVoteWeighted.fromData(data, isClassic);
 
       // market
-      case '/terra.market.v1beta1.MsgSwap':
+      case '/paloma.market.v1beta1.MsgSwap':
         return MsgSwap.fromData(data, isClassic);
-      case '/terra.market.v1beta1.MsgSwapSend':
+      case '/paloma.market.v1beta1.MsgSwapSend':
         return MsgSwapSend.fromData(data, isClassic);
 
       // authz
@@ -313,11 +313,11 @@ export namespace Msg {
         return MsgExecAuthorized.fromData(data, isClassic);
 
       // oracle
-      case '/terra.oracle.v1beta1.MsgDelegateFeedConsent':
+      case '/paloma.oracle.v1beta1.MsgDelegateFeedConsent':
         return MsgDelegateFeedConsent.fromData(data, isClassic);
-      case '/terra.oracle.v1beta1.MsgAggregateExchangeRatePrevote':
+      case '/paloma.oracle.v1beta1.MsgAggregateExchangeRatePrevote':
         return MsgAggregateExchangeRatePrevote.fromData(data, isClassic);
-      case '/terra.oracle.v1beta1.MsgAggregateExchangeRateVote':
+      case '/paloma.oracle.v1beta1.MsgAggregateExchangeRateVote':
         return MsgAggregateExchangeRateVote.fromData(data, isClassic);
       // slashing
       case '/cosmos.slashing.v1beta1.MsgUnjail':
@@ -336,24 +336,24 @@ export namespace Msg {
         return MsgEditValidator.fromData(data, isClassic);
 
       // wasm
-      case '/terra.wasm.v1beta1.MsgStoreCode':
+      case '/paloma.wasm.v1beta1.MsgStoreCode':
       case '/cosmwasm.wasm.v1.MsgStoreCode':
         return MsgStoreCode.fromData(data, isClassic);
-      case '/terra.wasm.v1beta1.MsgMigrateCode': // isClassic only
+      case '/paloma.wasm.v1beta1.MsgMigrateCode': // isClassic only
         return MsgMigrateCode.fromData(data, isClassic);
-      case '/terra.wasm.v1beta1.MsgInstantiateContract':
+      case '/paloma.wasm.v1beta1.MsgInstantiateContract':
       case '/cosmwasm.wasm.v1.MsgInstantiateContract':
         return MsgInstantiateContract.fromData(data, isClassic);
-      case '/terra.wasm.v1beta1.MsgExecuteContract':
+      case '/paloma.wasm.v1beta1.MsgExecuteContract':
       case '/cosmwasm.wasm.v1.MsgExecuteContract':
         return MsgExecuteContract.fromData(data, isClassic);
-      case '/terra.wasm.v1beta1.MsgMigrateContract':
+      case '/paloma.wasm.v1beta1.MsgMigrateContract':
       case '/cosmwasm.wasm.v1.MsgMigrateContract':
         return MsgMigrateContract.fromData(data, isClassic);
-      case '/terra.wasm.v1beta1.MsgUpdateContractAdmin':
+      case '/paloma.wasm.v1beta1.MsgUpdateContractAdmin':
       case '/cosmwasm.wasm.v1.MsgUpdateAdmin':
         return MsgUpdateContractAdmin.fromData(data, isClassic);
-      case '/terra.wasm.v1beta1.MsgClearContractAdmin':
+      case '/paloma.wasm.v1beta1.MsgClearContractAdmin':
       case '/cosmwasm.wasm.v1.MsgClearAdmin':
         return MsgClearContractAdmin.fromData(data, isClassic);
 
@@ -444,9 +444,9 @@ export namespace Msg {
         return MsgVote.unpackAny(proto, isClassic);
 
       // market
-      case '/terra.market.v1beta1.MsgSwap':
+      case '/paloma.market.v1beta1.MsgSwap':
         return MsgSwap.unpackAny(proto, isClassic);
-      case '/terra.market.v1beta1.MsgSwapSend':
+      case '/paloma.market.v1beta1.MsgSwapSend':
         return MsgSwapSend.unpackAny(proto, isClassic);
 
       // authz
@@ -458,11 +458,11 @@ export namespace Msg {
         return MsgExecAuthorized.unpackAny(proto, isClassic);
 
       // oracle
-      case '/terra.oracle.v1beta1.MsgDelegateFeedConsent':
+      case '/paloma.oracle.v1beta1.MsgDelegateFeedConsent':
         return MsgDelegateFeedConsent.unpackAny(proto, isClassic);
-      case '/terra.oracle.v1beta1.MsgAggregateExchangeRatePrevote':
+      case '/paloma.oracle.v1beta1.MsgAggregateExchangeRatePrevote':
         return MsgAggregateExchangeRatePrevote.unpackAny(proto, isClassic);
-      case '/terra.oracle.v1beta1.MsgAggregateExchangeRateVote':
+      case '/paloma.oracle.v1beta1.MsgAggregateExchangeRateVote':
         return MsgAggregateExchangeRateVote.unpackAny(proto, isClassic);
       // slashing
       case '/cosmos.slashing.v1beta1.MsgUnjail':
@@ -481,24 +481,24 @@ export namespace Msg {
         return MsgEditValidator.unpackAny(proto, isClassic);
 
       // wasm
-      case '/terra.wasm.v1beta1.MsgStoreCode':
+      case '/paloma.wasm.v1beta1.MsgStoreCode':
       case '/cosmwasm.wasm.v1.MsgStoreCode':
         return MsgStoreCode.unpackAny(proto, isClassic);
-      case '/terra.wasm.v1beta1.MsgMigrateCode': // isClassic only
+      case '/paloma.wasm.v1beta1.MsgMigrateCode': // isClassic only
         return MsgMigrateCode.unpackAny(proto, isClassic);
-      case '/terra.wasm.v1beta1.MsgInstantiateContract':
+      case '/paloma.wasm.v1beta1.MsgInstantiateContract':
       case '/cosmwasm.wasm.v1.MsgInstantiateContract':
         return MsgInstantiateContract.unpackAny(proto, isClassic);
-      case '/terra.wasm.v1beta1.MsgExecuteContract':
+      case '/paloma.wasm.v1beta1.MsgExecuteContract':
       case '/cosmwasm.wasm.v1.MsgExecuteContract':
         return MsgExecuteContract.unpackAny(proto, isClassic);
-      case '/terra.wasm.v1beta1.MsgMigrateContract':
+      case '/paloma.wasm.v1beta1.MsgMigrateContract':
       case '/cosmwasm.wasm.v1beta1.MsgMigrateContract':
         return MsgMigrateContract.unpackAny(proto, isClassic);
-      case '/terra.wasm.v1beta1.MsgUpdateContractAdmin':
+      case '/paloma.wasm.v1beta1.MsgUpdateContractAdmin':
       case '/cosmwasm.wasm.v1beta1.MsgUpdateAdmin':
         return MsgUpdateContractAdmin.unpackAny(proto, isClassic);
-      case '/terra.wasm.v1beta1.MsgClearContractAdmin':
+      case '/paloma.wasm.v1beta1.MsgClearContractAdmin':
       case '/cosmwasm.wasm.v1.MsgClearAdmin':
         return MsgClearContractAdmin.unpackAny(proto, isClassic);
 

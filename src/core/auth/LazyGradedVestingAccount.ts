@@ -2,13 +2,13 @@ import { Denom } from '../Denom';
 import { JSONSerializable } from '../../util/json';
 import { BaseVestingAccount } from './BaseVestingAccount';
 import { Dec } from '../numeric';
-import { BaseVestingAccount as BaseVestingAccount_pb } from '@terra-money/legacy.proto/cosmos/vesting/v1beta1/vesting';
+import { BaseVestingAccount as BaseVestingAccount_pb } from '@palomachain/legacy.proto/cosmos/vesting/v1beta1/vesting';
 import {
   LazyGradedVestingAccount as LazyGradedVestingAccount_pb,
   Schedule as Schedule_pb,
   VestingSchedule as VestingSchedule_pb,
-} from '@terra-money/legacy.proto/terra/vesting/v1beta1/vesting';
-import { Any } from '@terra-money/legacy.proto/google/protobuf/any';
+} from '@palomachain/legacy.proto/terra/vesting/v1beta1/vesting';
+import { Any } from '@palomachain/legacy.proto/google/protobuf/any';
 import * as Long from 'long';
 import { PublicKey } from '../PublicKey';
 
@@ -78,7 +78,7 @@ export class LazyGradedVestingAccount extends JSONSerializable<
     _;
     const { base_vesting_account, vesting_schedules } = this;
     return {
-      '@type': '/terra.vesting.v1beta1.LazyGradedVestingAccount',
+      '@type': '/paloma.vesting.v1beta1.LazyGradedVestingAccount',
       base_vesting_account: base_vesting_account.toData(),
       vesting_schedules: vesting_schedules.map(vs => vs.toData()),
     };
@@ -131,7 +131,7 @@ export class LazyGradedVestingAccount extends JSONSerializable<
 
   public packAny(isClassic?: boolean): Any {
     return Any.fromPartial({
-      typeUrl: '/terra.vesting.v1beta1.LazyGradedVestingAccount',
+      typeUrl: '/paloma.vesting.v1beta1.LazyGradedVestingAccount',
       value: LazyGradedVestingAccount_pb.encode(
         this.toProto(isClassic)
       ).finish(),
@@ -159,7 +159,7 @@ export namespace LazyGradedVestingAccount {
   }
 
   export interface Data {
-    '@type': '/terra.vesting.v1beta1.LazyGradedVestingAccount';
+    '@type': '/paloma.vesting.v1beta1.LazyGradedVestingAccount';
     base_vesting_account: BaseVestingAccount.DataValue;
     vesting_schedules: VestingSchedule.Data[];
   }

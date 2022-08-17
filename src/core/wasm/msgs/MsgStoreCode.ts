@@ -1,8 +1,8 @@
 import { JSONSerializable } from '../../../util/json';
 import { AccAddress } from '../../bech32';
-import { Any } from '@terra-money/terra.proto/google/protobuf/any';
-import { MsgStoreCode as MsgStoreCode_legacy_pb } from '@terra-money/legacy.proto/terra/wasm/v1beta1/tx';
-import { MsgStoreCode as MsgStoreCode_pb } from '@terra-money/terra.proto/cosmwasm/wasm/v1/tx';
+import { Any } from '@palomachain/paloma.proto/google/protobuf/any';
+import { MsgStoreCode as MsgStoreCode_legacy_pb } from '@palomachain/legacy.proto/terra/wasm/v1beta1/tx';
+import { MsgStoreCode as MsgStoreCode_pb } from '@palomachain/paloma.proto/cosmwasm/wasm/v1/tx';
 import { AccessConfig } from '../AccessConfig';
 
 export class MsgStoreCode extends JSONSerializable<
@@ -108,7 +108,7 @@ export class MsgStoreCode extends JSONSerializable<
   public packAny(isClassic?: boolean): Any {
     let typeUrl: string;
     if (isClassic) {
-      typeUrl = '/terra.wasm.v1beta1.MsgStoreCode';
+      typeUrl = '/paloma.wasm.v1beta1.MsgStoreCode';
     } else {
       typeUrl = '/cosmwasm.wasm.v1.MsgStoreCode';
     }
@@ -159,7 +159,7 @@ export class MsgStoreCode extends JSONSerializable<
     const { sender, wasm_byte_code, instantiate_permission } = this;
     if (isClassic) {
       return {
-        '@type': '/terra.wasm.v1beta1.MsgStoreCode',
+        '@type': '/paloma.wasm.v1beta1.MsgStoreCode',
         sender,
         wasm_byte_code,
       };
@@ -194,7 +194,7 @@ export namespace MsgStoreCode {
   export type Amino = AminoV1 | AminoV2;
 
   export interface DataV1 {
-    '@type': '/terra.wasm.v1beta1.MsgStoreCode';
+    '@type': '/paloma.wasm.v1beta1.MsgStoreCode';
     sender: AccAddress;
     wasm_byte_code: string;
   }

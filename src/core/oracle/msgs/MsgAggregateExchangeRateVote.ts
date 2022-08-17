@@ -3,8 +3,8 @@ import { JSONSerializable } from '../../../util/json';
 import { AccAddress, ValAddress } from '../../bech32';
 import { MsgAggregateExchangeRatePrevote } from './MsgAggregateExchangeRatePrevote';
 import { Coins } from '../../Coins';
-import { Any } from '@terra-money/legacy.proto/google/protobuf/any';
-import { MsgAggregateExchangeRateVote as MsgAggregateExchangeRateVote_pb } from '@terra-money/legacy.proto/terra/oracle/v1beta1/tx';
+import { Any } from '@palomachain/legacy.proto/google/protobuf/any';
+import { MsgAggregateExchangeRateVote as MsgAggregateExchangeRateVote_pb } from '@palomachain/legacy.proto/terra/oracle/v1beta1/tx';
 
 /**
  * Calculates the aggregate vote hash
@@ -100,7 +100,7 @@ export class MsgAggregateExchangeRateVote extends JSONSerializable<
     }
     const { exchange_rates, salt, feeder, validator } = this;
     return {
-      '@type': '/terra.oracle.v1beta1.MsgAggregateExchangeRateVote',
+      '@type': '/paloma.oracle.v1beta1.MsgAggregateExchangeRateVote',
       exchange_rates: exchange_rates.toDecCoins().toString(),
       salt,
       feeder,
@@ -165,7 +165,7 @@ export class MsgAggregateExchangeRateVote extends JSONSerializable<
       throw new Error('Not supported for the network');
     }
     return Any.fromPartial({
-      typeUrl: '/terra.oracle.v1beta1.MsgAggregateExchangeRateVote',
+      typeUrl: '/paloma.oracle.v1beta1.MsgAggregateExchangeRateVote',
       value: MsgAggregateExchangeRateVote_pb.encode(
         this.toProto(isClassic)
       ).finish(),
@@ -198,7 +198,7 @@ export namespace MsgAggregateExchangeRateVote {
   }
 
   export interface Data {
-    '@type': '/terra.oracle.v1beta1.MsgAggregateExchangeRateVote';
+    '@type': '/paloma.oracle.v1beta1.MsgAggregateExchangeRateVote';
     exchange_rates: string;
     salt: string;
     feeder: AccAddress;

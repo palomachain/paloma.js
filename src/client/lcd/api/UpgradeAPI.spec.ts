@@ -4,7 +4,7 @@ import { UpgradeAPI } from './UpgradeAPI.ts';
 
 const paloma = new LCDClient({
   chainID: 'pisco-1',
-  URL: 'https://pisco-lcd.paloma.dev',
+  URL: 'http://rbox.palomachain.com:1317',
 });
 const upgrade = new UpgradeAPI(paloma);
 

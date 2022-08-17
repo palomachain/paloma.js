@@ -72,7 +72,7 @@ describe('RawKey', () => {
       data: { single },
     } = await rk.createSignatureAmino(signDoc, true);
     expect((single as SignatureV2.Descriptor.Single).signature).toEqual(
-      'FJKAXRxNB5ruqukhVqZf3S/muZEUmZD10fVmWycdVIxVWiCXXFsUy2VY2jINEOUGNwfrqEZsT2dUfAvWj8obLg=='
+      'n0N2fjCxPdaHJN7ZVeEcjn9JACBSiHQ+Kv0Ulf9tUxIVCwrRkdQGoxqKmGhL0D0HbbUh2sUVNAHDAeUR57CUxg=='
     );
   });
 });

@@ -2,7 +2,7 @@ import { JSONSerializable } from '../util/json';
 import { Coins } from './Coins';
 import { Int } from './numeric';
 import { AccAddress } from './bech32';
-import { Fee as Fee_pb } from '@terra-money/terra.proto/cosmos/tx/v1beta1/tx';
+import { Fee as Fee_pb } from '@palomachain/paloma.proto/cosmos/tx/v1beta1/tx';
 import * as Long from 'long';
 
 /**

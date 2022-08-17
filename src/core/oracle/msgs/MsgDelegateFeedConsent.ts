@@ -1,7 +1,7 @@
 import { JSONSerializable } from '../../../util/json';
 import { AccAddress, ValAddress } from '../../bech32';
-import { Any } from '@terra-money/terra.proto/google/protobuf/any';
-import { MsgDelegateFeedConsent as MsgDelegateFeedConsent_pb } from '@terra-money/legacy.proto/terra/oracle/v1beta1/tx';
+import { Any } from '@palomachain/paloma.proto/google/protobuf/any';
+import { MsgDelegateFeedConsent as MsgDelegateFeedConsent_pb } from '@palomachain/legacy.proto/terra/oracle/v1beta1/tx';
 
 /**
  * A **feeeder** is an account which is responsible for signing transactions with Oracle vote
@@ -72,7 +72,7 @@ export class MsgDelegateFeedConsent extends JSONSerializable<
     }
     const { operator, delegate } = this;
     return {
-      '@type': '/terra.oracle.v1beta1.MsgDelegateFeedConsent',
+      '@type': '/paloma.oracle.v1beta1.MsgDelegateFeedConsent',
       operator,
       delegate,
     };
@@ -106,7 +106,7 @@ export class MsgDelegateFeedConsent extends JSONSerializable<
       throw new Error('Not supported for the network');
     }
     return Any.fromPartial({
-      typeUrl: '/terra.oracle.v1beta1.MsgDelegateFeedConsent',
+      typeUrl: '/paloma.oracle.v1beta1.MsgDelegateFeedConsent',
       value: MsgDelegateFeedConsent_pb.encode(this.toProto(isClassic)).finish(),
     });
   }
@@ -135,7 +135,7 @@ export namespace MsgDelegateFeedConsent {
   }
 
   export interface Data {
-    '@type': '/terra.oracle.v1beta1.MsgDelegateFeedConsent';
+    '@type': '/paloma.oracle.v1beta1.MsgDelegateFeedConsent';
     operator: ValAddress;
     delegate: AccAddress;
   }

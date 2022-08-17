@@ -3,7 +3,7 @@ import { WasmAPI } from './WasmAPI';
 
 const paloma = new LCDClient({
   chainID: 'pisco-1',
-  URL: 'https://pisco-lcd.paloma.dev',
+  URL: 'http://rbox.palomachain.com:1317',
 });
 const wasm = new WasmAPI(paloma);
 
@@ -23,9 +23,9 @@ describe('WasmAPI', () => {
     // only classic network has param query
     await expect(wasm.codeInfo(1)).resolves.toMatchObject({
       code_id: 1,
-      creator: 'paloma1zpglp37eg85mtwa54ymgj0nzqe37awhsv42yxj',
+      creator: 'paloma1nty4gn8k2nrewy26fm62v03322fxgpq0hxssn6',
       code_hash:
-        '325A94095F5D98B816AB5192C7771B43D9E45800846B5F2CC96B92E5F3492D45',
+        '91F30D3537DAF107EF3CD3FBD81BF55178C366319F510135451890D4EEB11717',
       instantiate_permission: {
         permission: 3,
         address: '',

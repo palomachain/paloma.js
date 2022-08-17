@@ -1,7 +1,7 @@
 import { JSONSerializable } from '../../../util/json';
 import { AccAddress } from '../../bech32';
-import { MsgRevoke as MsgRevoke_pb } from '@terra-money/terra.proto/cosmos/authz/v1beta1/tx';
-import { Any } from '@terra-money/terra.proto/google/protobuf/any';
+import { MsgRevoke as MsgRevoke_pb } from '@palomachain/paloma.proto/cosmos/authz/v1beta1/tx';
+import { Any } from '@palomachain/paloma.proto/google/protobuf/any';
 
 export class MsgRevokeAuthorization extends JSONSerializable<
   MsgRevokeAuthorization.Amino,

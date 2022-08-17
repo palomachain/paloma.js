@@ -1,6 +1,6 @@
 import { MsgExecuteContract } from './MsgExecuteContract';
-import { MsgExecuteContract as MsgExecuteContract_legacy_pb } from '@terra-money/legacy.proto/paloma/wasm/v1beta1/tx';
-import { MsgExecuteContract as MsgExecuteContract_pb } from '@terra-money/paloma.proto/cosmwasm/wasm/v1/tx';
+import { MsgExecuteContract as MsgExecuteContract_legacy_pb } from '@palomachain/legacy.proto/terra/wasm/v1beta1/tx';
+import { MsgExecuteContract as MsgExecuteContract_pb } from '@palomachain/paloma.proto/cosmwasm/wasm/v1/tx';
 
 describe('MsgExecuteContract', () => {
   it('legacy: works when execute_msg is not JSON', () => {

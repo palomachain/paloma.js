@@ -2,8 +2,8 @@ import { LCDClient } from './LCDClient';
 import { Key } from '../../key';
 import { CreateTxOptions } from '../lcd/api/TxAPI';
 import { Tx } from '../../core/Tx';
-import { SignMode as SignModeV1 } from '@terra-money/legacy.proto/cosmos/tx/signing/v1beta1/signing';
-import { SignMode as SignModeV2 } from '@terra-money/terra.proto/cosmos/tx/signing/v1beta1/signing';
+import { SignMode as SignModeV1 } from '@palomachain/legacy.proto/cosmos/tx/signing/v1beta1/signing';
+import { SignMode as SignModeV2 } from '@palomachain/paloma.proto/cosmos/tx/signing/v1beta1/signing';
 
 export class Wallet {
   constructor(public lcd: LCDClient, public key: Key) {}

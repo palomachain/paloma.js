@@ -1,11 +1,11 @@
 import { TendermintAPI } from './TendermintAPI';
 import { Tx } from '../../../core/Tx';
-import { Tx as Tx_pb } from '@terra-money/legacy.proto/cosmos/tx/v1beta1/tx';
+import { Tx as Tx_pb } from '@palomachain/legacy.proto/cosmos/tx/v1beta1/tx';
 import { LCDClient } from '../LCDClient';
 
 const paloma = new LCDClient({
   chainID: 'pisco-1',
-  URL: 'https://pisco-lcd.paloma.dev',
+  URL: 'http://rbox.palomachain.com:1317',
 });
 const tendermint = new TendermintAPI(paloma);
 

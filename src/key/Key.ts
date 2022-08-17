@@ -10,7 +10,7 @@ import {
   PublicKey,
 } from '../core';
 import { SignatureV2 } from '../core/SignatureV2';
-import { SignMode } from '@terra-money/terra.proto/cosmos/tx/signing/v1beta1/signing';
+import { SignMode } from '@palomachain/paloma.proto/cosmos/tx/signing/v1beta1/signing';
 
 /**
  * Abstract key interface that provides transaction signing features and Bech32 address

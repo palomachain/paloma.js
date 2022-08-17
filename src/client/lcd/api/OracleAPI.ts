@@ -92,7 +92,7 @@ export class OracleAPI extends BaseAPI {
 
     return this.c
       .get<{ exchange_rates: Coins.Data }>(
-        `/terra/oracle/v1beta1/denoms/exchange_rates`,
+        `/paloma/oracle/v1beta1/denoms/exchange_rates`,
         params
       )
       .then(d => Coins.fromData(d.exchange_rates));
@@ -112,7 +112,7 @@ export class OracleAPI extends BaseAPI {
 
     return this.c
       .get<{ exchange_rate: string }>(
-        `/terra/oracle/v1beta1/denoms/${denom}/exchange_rate`,
+        `/paloma/oracle/v1beta1/denoms/${denom}/exchange_rate`,
         params
       )
       .then(d =>
@@ -132,7 +132,10 @@ export class OracleAPI extends BaseAPI {
     }
 
     return this.c
-      .get<{ actives: Denom[] }>(`/terra/oracle/v1beta1/denoms/actives`, params)
+      .get<{ actives: Denom[] }>(
+        `/paloma/oracle/v1beta1/denoms/actives`,
+        params
+      )
       .then(d => d.actives);
   }
 
@@ -151,7 +154,7 @@ export class OracleAPI extends BaseAPI {
 
     return this.c
       .get<{ feeder_addr: AccAddress }>(
-        `/terra/oracle/v1beta1/validators/${validator}/feeder`,
+        `/paloma/oracle/v1beta1/validators/${validator}/feeder`,
         params
       )
       .then(d => d.feeder_addr);
@@ -171,7 +174,7 @@ export class OracleAPI extends BaseAPI {
 
     return this.c
       .get<{ miss_counter: string }>(
-        `/terra/oracle/v1beta1/validators/${validator}/miss`,
+        `/paloma/oracle/v1beta1/validators/${validator}/miss`,
         params
       )
       .then(d => Number.parseInt(d.miss_counter));
@@ -191,7 +194,7 @@ export class OracleAPI extends BaseAPI {
 
     return this.c
       .get<{ aggregate_prevote: AggregateExchangeRatePrevote.Data }>(
-        `/terra/oracle/v1beta1/validators/${validator}/aggregate_prevote`,
+        `/paloma/oracle/v1beta1/validators/${validator}/aggregate_prevote`,
         params
       )
       .then(d => AggregateExchangeRatePrevote.fromData(d.aggregate_prevote));
@@ -211,7 +214,7 @@ export class OracleAPI extends BaseAPI {
 
     return this.c
       .get<{ aggregate_vote: AggregateExchangeRateVote.Data }>(
-        `/terra/oracle/v1beta1/validators/${validator}/aggregate_vote`,
+        `/paloma/oracle/v1beta1/validators/${validator}/aggregate_vote`,
         params
       )
       .then(d => AggregateExchangeRateVote.fromData(d.aggregate_vote));
@@ -227,7 +230,7 @@ export class OracleAPI extends BaseAPI {
 
     return this.c
       .get<{ params: OracleParams.Data }>(
-        `/terra/oracle/v1beta1/params`,
+        `/paloma/oracle/v1beta1/params`,
         params
       )
       .then(({ params: d }) => ({

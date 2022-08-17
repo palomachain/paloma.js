@@ -1,7 +1,7 @@
 import { JSONSerializable } from '../../../util/json';
 import { AccAddress, ValAddress } from '../../bech32';
-import { Any } from '@terra-money/legacy.proto/google/protobuf/any';
-import { MsgAggregateExchangeRatePrevote as MsgAggregateExchangeRatePrevote_pb } from '@terra-money/legacy.proto/terra/oracle/v1beta1/tx';
+import { Any } from '@palomachain/legacy.proto/google/protobuf/any';
+import { MsgAggregateExchangeRatePrevote as MsgAggregateExchangeRatePrevote_pb } from '@palomachain/legacy.proto/terra/oracle/v1beta1/tx';
 
 /**
  * Aggregate analog of MsgExchangeRatePrevote
@@ -73,7 +73,7 @@ export class MsgAggregateExchangeRatePrevote extends JSONSerializable<
 
     const { hash, feeder, validator } = this;
     return {
-      '@type': '/terra.oracle.v1beta1.MsgAggregateExchangeRatePrevote',
+      '@type': '/paloma.oracle.v1beta1.MsgAggregateExchangeRatePrevote',
       hash,
       feeder,
       validator,
@@ -114,7 +114,7 @@ export class MsgAggregateExchangeRatePrevote extends JSONSerializable<
     }
 
     return Any.fromPartial({
-      typeUrl: '/terra.oracle.v1beta1.MsgAggregateExchangeRatePrevote',
+      typeUrl: '/paloma.oracle.v1beta1.MsgAggregateExchangeRatePrevote',
       value: MsgAggregateExchangeRatePrevote_pb.encode(
         this.toProto(isClassic)
       ).finish(),
@@ -147,7 +147,7 @@ export namespace MsgAggregateExchangeRatePrevote {
   }
 
   export interface Data {
-    '@type': '/terra.oracle.v1beta1.MsgAggregateExchangeRatePrevote';
+    '@type': '/paloma.oracle.v1beta1.MsgAggregateExchangeRatePrevote';
     hash: string;
     feeder: AccAddress;
     validator: ValAddress;

@@ -1,8 +1,8 @@
 import { JSONSerializable } from '../../../util/json';
 import { AccAddress } from '../../bech32';
-import { Any } from '@terra-money/terra.proto/google/protobuf/any';
-import { MsgVote as MsgVote_pb } from '@terra-money/terra.proto/cosmos/gov/v1beta1/tx';
-import { VoteOption } from '@terra-money/terra.proto/cosmos/gov/v1beta1/gov';
+import { Any } from '@palomachain/paloma.proto/google/protobuf/any';
+import { MsgVote as MsgVote_pb } from '@palomachain/paloma.proto/cosmos/gov/v1beta1/tx';
+import { VoteOption } from '@palomachain/paloma.proto/cosmos/gov/v1beta1/gov';
 import * as Long from 'long';
 
 /**

@@ -4,9 +4,9 @@ import {
   ParameterChangeProposal,
 } from '../src';
 
-// test1 key from localterra accounts
-const terra = new LocalTerra();
-const { test1 } = terra.wallets;
+// test1 key from localpaloma accounts
+const paloma = new LocalTerra();
+const { test1 } = paloma.wallets;
 
 const proposal = new ParameterChangeProposal('testing params', 'yay!', [
   {
@@ -199,7 +199,7 @@ async function main(): Promise<void> {
     msgs: [submitProposal],
   });
 
-  const result = await terra.tx.broadcast(tx);
+  const result = await paloma.tx.broadcast(tx);
   console.log(result);
 }
 

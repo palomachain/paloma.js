@@ -1,6 +1,6 @@
 import { JSONSerializable } from '../../../util/json';
-import { Any } from '@terra-money/terra.proto/google/protobuf/any';
-import { UnpinCodesProposal as UnpinCodesProposal_pb } from '@terra-money/terra.proto/cosmwasm/wasm/v1/proposal';
+import { Any } from '@palomachain/paloma.proto/google/protobuf/any';
+import { UnpinCodesProposal as UnpinCodesProposal_pb } from '@palomachain/paloma.proto/cosmwasm/wasm/v1/proposal';
 import * as Long from 'long';
 
 /**

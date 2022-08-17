@@ -17,8 +17,8 @@ interface CLIKeyParams {
 }
 
 /**
- * Key implementation that uses `terrad` to sign transactions. Keys should be registered
- * in `terrad`'s OS keyring.
+ * Key implementation that uses `palomad` to sign transactions. Keys should be registered
+ * in `palomad`'s OS keyring.
  *
  * NOTE: This Key implementation overrides `createSignature()` and only provide a shim
  * for `sign()`.
@@ -28,10 +28,10 @@ export class CLIKey extends Key {
 
   /**
    *
-   * @param keyName name of the key for terrad
+   * @param keyName name of the key for palomad
    * @param multisig (optional) address of multisig account on behalf of which transaction shall be signed
-   * @param cliPath (optional) path of terrad
-   * @param home (optional) home option for terrad
+   * @param cliPath (optional) path of palomad
+   * @param home (optional) home option for palomad
    */
   constructor(private params: CLIKeyParams) {
     super();

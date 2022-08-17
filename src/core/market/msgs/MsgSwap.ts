@@ -2,8 +2,8 @@ import { JSONSerializable } from '../../../util/json';
 import { Coin } from '../../Coin';
 import { Denom } from '../../Denom';
 import { AccAddress } from '../../bech32';
-import { MsgSwap as MsgSwap_pb } from '@terra-money/legacy.proto/terra/market/v1beta1/tx';
-import { Any } from '@terra-money/legacy.proto/google/protobuf/any';
+import { MsgSwap as MsgSwap_pb } from '@palomachain/legacy.proto/terra/market/v1beta1/tx';
+import { Any } from '@palomachain/legacy.proto/google/protobuf/any';
 
 /**
  * Executes a market swap between 2 denominations at the exchange rate registered by the
@@ -81,7 +81,7 @@ export class MsgSwap extends JSONSerializable<
       throw new Error('Not supported for the network');
     }
     return Any.fromPartial({
-      typeUrl: '/terra.market.v1beta1.MsgSwap',
+      typeUrl: '/paloma.market.v1beta1.MsgSwap',
       value: MsgSwap_pb.encode(this.toProto(isClassic)).finish(),
     });
   }
@@ -107,7 +107,7 @@ export class MsgSwap extends JSONSerializable<
     }
     const { trader, offer_coin, ask_denom } = this;
     return {
-      '@type': '/terra.market.v1beta1.MsgSwap',
+      '@type': '/paloma.market.v1beta1.MsgSwap',
       trader,
       offer_coin: offer_coin.toData(),
       ask_denom,
@@ -126,7 +126,7 @@ export namespace MsgSwap {
   }
 
   export interface Data {
-    '@type': '/terra.market.v1beta1.MsgSwap';
+    '@type': '/paloma.market.v1beta1.MsgSwap';
     trader: AccAddress;
     offer_coin: Coin.Data;
     ask_denom: Denom;

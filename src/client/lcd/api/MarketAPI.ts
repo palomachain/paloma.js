@@ -50,7 +50,7 @@ export class MarketAPI extends BaseAPI {
     };
 
     return this.c
-      .get<{ return_coin: Coin.Data }>(`/terra/market/v1beta1/swap`, params)
+      .get<{ return_coin: Coin.Data }>(`/paloma/market/v1beta1/swap`, params)
       .then(d => Coin.fromData(d.return_coin));
   }
 
@@ -63,11 +63,11 @@ export class MarketAPI extends BaseAPI {
     }
 
     return this.c
-      .get<{ terra_pool_delta: Numeric.Input }>(
-        `/terra/market/v1beta1/terra_pool_delta`,
+      .get<{ paloma_pool_delta: Numeric.Input }>(
+        `/paloma/market/v1beta1/paloma_pool_delta`,
         params
       )
-      .then(d => new Dec(d.terra_pool_delta));
+      .then(d => new Dec(d.paloma_pool_delta));
   }
 
   /**
@@ -80,7 +80,7 @@ export class MarketAPI extends BaseAPI {
 
     return this.c
       .get<{ params: MarketParams.Data }>(
-        `/terra/market/v1beta1/params`,
+        `/paloma/market/v1beta1/params`,
         params
       )
       .then(({ params: d }) => ({

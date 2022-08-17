@@ -15,8 +15,8 @@ import { hashToHex } from '../../../util/hash';
 import { LCDClient } from '../LCDClient';
 import { TxLog } from '../../../core';
 import { APIParams, Pagination, PaginationOptions } from '../APIRequester';
-import { BroadcastMode as BroadcastModeV1 } from '@terra-money/legacy.proto/cosmos/tx/v1beta1/service';
-import { BroadcastMode as BroadcastModeV2 } from '@terra-money/terra.proto/cosmos/tx/v1beta1/service';
+import { BroadcastMode as BroadcastModeV1 } from '@palomachain/legacy.proto/cosmos/tx/v1beta1/service';
+import { BroadcastMode as BroadcastModeV2 } from '@palomachain/paloma.proto/cosmos/tx/v1beta1/service';
 
 interface Wait {
   height: number;

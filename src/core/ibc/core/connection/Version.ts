@@ -1,4 +1,4 @@
-import { Version as Version_pb } from '@terra-money/terra.proto/ibc/core/connection/v1/connection';
+import { Version as Version_pb } from '@palomachain/paloma.proto/ibc/core/connection/v1/connection';
 import { JSONSerializable } from '../../../../util/json';
 
 /*

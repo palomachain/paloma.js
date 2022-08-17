@@ -1,7 +1,7 @@
 import { JSONSerializable } from '../../../util/json';
 import { ParamChange, ParamChanges } from '../ParamChange';
-import { Any } from '@terra-money/terra.proto/google/protobuf/any';
-import { ParameterChangeProposal as ParameterChangeProposal_pb } from '@terra-money/terra.proto/cosmos/params/v1beta1/params';
+import { Any } from '@palomachain/paloma.proto/google/protobuf/any';
+import { ParameterChangeProposal as ParameterChangeProposal_pb } from '@palomachain/paloma.proto/cosmos/params/v1beta1/params';
 
 /**
  * Describes a proposal for directly altering the value of the module parameters.

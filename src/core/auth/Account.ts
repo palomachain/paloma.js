@@ -1,4 +1,4 @@
-import { Any } from '@terra-money/legacy.proto/google/protobuf/any';
+import { Any } from '@palomachain/legacy.proto/google/protobuf/any';
 import { BaseAccount } from './BaseAccount';
 import { LazyGradedVestingAccount } from './LazyGradedVestingAccount';
 import { ContinuousVestingAccount } from './ContinuousVestingAccount';
@@ -61,7 +61,7 @@ export namespace Account {
         return BaseAccount.fromData(data, isClassic);
       case '/cosmos.vesting.v1beta1.BaseVestingAccount':
         return BaseVestingAccount.fromData(data, isClassic);
-      case '/terra.vesting.v1beta1.LazyGradedVestingAccount':
+      case '/paloma.vesting.v1beta1.LazyGradedVestingAccount':
         return LazyGradedVestingAccount.fromData(data, isClassic);
       case '/cosmos.vesting.v1beta1.ContinuousVestingAccount':
         return ContinuousVestingAccount.fromData(data, isClassic);
@@ -79,7 +79,7 @@ export namespace Account {
     const typeUrl = accountAny.typeUrl;
     if (typeUrl === '/cosmos.auth.v1beta1.BaseAccount') {
       return BaseAccount.unpackAny(accountAny, isClassic);
-    } else if (typeUrl === '/terra.vesting.v1beta1.LazyGradedVestingAccount') {
+    } else if (typeUrl === '/paloma.vesting.v1beta1.LazyGradedVestingAccount') {
       return LazyGradedVestingAccount.unpackAny(accountAny, isClassic);
     } else if (typeUrl === '/cosmos.vesting.v1beta1.ContinuousVestingAccount') {
       return ContinuousVestingAccount.unpackAny(accountAny, isClassic);

@@ -1,6 +1,6 @@
 import { BaseAPI } from './BaseAPI';
 import { APIParams, Pagination, PaginationOptions } from '../APIRequester';
-//import { DenomTrace } from '@terra-money/legacy.proto/ibc/applications/transfer/v1/query'
+//import { DenomTrace } from '@palomachain/legacy.proto/ibc/applications/transfer/v1/query'
 import { DenomTrace } from '../../../core/ibc/applications/transfer/v1/DenomTrace';
 import { LCDClient } from '../LCDClient';
 

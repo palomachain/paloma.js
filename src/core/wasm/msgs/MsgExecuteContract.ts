@@ -1,9 +1,9 @@
 import { JSONSerializable, removeNull } from '../../../util/json';
 import { AccAddress } from '../../bech32';
 import { Coins } from '../../Coins';
-import { Any } from '@terra-money/terra.proto/google/protobuf/any';
-import { MsgExecuteContract as MsgExecuteContract_legacy_pb } from '@terra-money/legacy.proto/terra/wasm/v1beta1/tx';
-import { MsgExecuteContract as MsgExecuteContract_pb } from '@terra-money/terra.proto/cosmwasm/wasm/v1/tx';
+import { Any } from '@palomachain/paloma.proto/google/protobuf/any';
+import { MsgExecuteContract as MsgExecuteContract_legacy_pb } from '@palomachain/legacy.proto/terra/wasm/v1beta1/tx';
+import { MsgExecuteContract as MsgExecuteContract_pb } from '@palomachain/paloma.proto/cosmwasm/wasm/v1/tx';
 
 export class MsgExecuteContract extends JSONSerializable<
   MsgExecuteContract.Amino,
@@ -128,7 +128,7 @@ export class MsgExecuteContract extends JSONSerializable<
   public packAny(isClassic?: boolean): Any {
     if (isClassic) {
       return Any.fromPartial({
-        typeUrl: '/terra.wasm.v1beta1.MsgExecuteContract',
+        typeUrl: '/paloma.wasm.v1beta1.MsgExecuteContract',
         value: MsgExecuteContract_legacy_pb.encode(
           this.toProto(isClassic) as MsgExecuteContract_legacy_pb
         ).finish(),
@@ -184,7 +184,7 @@ export class MsgExecuteContract extends JSONSerializable<
     const { sender, contract, execute_msg, coins } = this;
     if (isClassic) {
       return {
-        '@type': '/terra.wasm.v1beta1.MsgExecuteContract',
+        '@type': '/paloma.wasm.v1beta1.MsgExecuteContract',
         sender,
         contract,
         execute_msg,
@@ -224,7 +224,7 @@ export namespace MsgExecuteContract {
   }
 
   export interface DataV1 {
-    '@type': '/terra.wasm.v1beta1.MsgExecuteContract';
+    '@type': '/paloma.wasm.v1beta1.MsgExecuteContract';
     sender: AccAddress;
     contract: AccAddress;
     execute_msg: object | string;

@@ -1,11 +1,11 @@
 import { GovAPI } from './GovAPI';
 import { Coins, Dec, Int, Proposal } from '../../../core';
-import { Deposit } from '@terra-money/paloma.proto/cosmos/gov/v1beta1/gov';
+import { Deposit } from '@palomachain/paloma.proto/cosmos/gov/v1beta1/gov';
 import { LCDClient } from '../LCDClient';
 
 const paloma = new LCDClient({
   chainID: 'pisco-1',
-  URL: 'https://pisco-lcd.paloma.dev',
+  URL: 'http://rbox.palomachain.com:1317',
 });
 const gov = new GovAPI(paloma);
 

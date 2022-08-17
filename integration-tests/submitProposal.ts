@@ -9,10 +9,10 @@ import {
 
 const client = new LCDClient({
   chainID: 'bombay-12',
-  URL: 'https://bombay-lcd.terra.dev',
+  URL: 'https://bombay-lcd.paloma.dev',
 });
 
-// LocalPaloma test1 terra1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v
+// LocalPaloma test1 paloma1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v
 const mk = new MnemonicKey({
   mnemonic:
     'notice oak worry limit wrap speak medal online prefer cluster roof addict wrist behave treat actual wasp year salad speed social layer crew genius',

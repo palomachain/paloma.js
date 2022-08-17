@@ -2,8 +2,8 @@ import { Coins } from '../../Coins';
 import { Proposal } from '../Proposal';
 import { JSONSerializable } from '../../../util/json';
 import { AccAddress } from '../../bech32';
-import { Any } from '@terra-money/terra.proto/google/protobuf/any';
-import { MsgSubmitProposal as MsgSubmitProposal_pb } from '@terra-money/terra.proto/cosmos/gov/v1beta1/tx';
+import { Any } from '@palomachain/paloma.proto/google/protobuf/any';
+import { MsgSubmitProposal as MsgSubmitProposal_pb } from '@palomachain/paloma.proto/cosmos/gov/v1beta1/tx';
 
 /**
  * Submit a proposal alongside an initial deposit.

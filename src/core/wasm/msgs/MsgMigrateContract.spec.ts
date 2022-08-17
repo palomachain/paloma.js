@@ -1,6 +1,6 @@
 import { MsgMigrateContract } from './MsgMigrateContract';
-import { MsgMigrateContract as MsgMigrateContract_legacy_pb } from '@terra-money/legacy.proto/paloma/wasm/v1beta1/tx';
-import { MsgMigrateContract as MsgMigrateContract_pb } from '@terra-money/paloma.proto/cosmwasm/wasm/v1/tx';
+import { MsgMigrateContract as MsgMigrateContract_legacy_pb } from '@palomachain/legacy.proto/terra/wasm/v1beta1/tx';
+import { MsgMigrateContract as MsgMigrateContract_pb } from '@palomachain/paloma.proto/cosmwasm/wasm/v1/tx';
 
 const msgWithAdmin = new MsgMigrateContract(
   'paloma1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v',

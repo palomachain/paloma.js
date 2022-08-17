@@ -1,5 +1,5 @@
 import { LCDClient, MsgSend, MnemonicKey } from '../src';
-import { SignMode } from '@terra-money/terra.proto/cosmos/tx/signing/v1beta1/signing';
+import { SignMode } from '@palomachain/paloma.proto/cosmos/tx/signing/v1beta1/signing';
 
 async function main() {
   // create a key out of a mnemonic
@@ -9,7 +9,7 @@ async function main() {
   });
 
   const bombay = new LCDClient({
-    chainID: 'localterra',
+    chainID: 'localpaloma',
     URL: 'http://localhost:1317',
   });
 
@@ -19,8 +19,8 @@ async function main() {
 
   // create a simple message that moves coin balances
   const send = new MsgSend(
-    'terra1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v',
-    'terra17lmam6zguazs5q5u6z5mmx76uj63gldnse2pdp',
+    'paloma1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v',
+    'paloma17lmam6zguazs5q5u6z5mmx76uj63gldnse2pdp',
     { uluna: 1000 }
   );
 
@@ -28,13 +28,13 @@ async function main() {
     .createAndSignTx({
       signMode: SignMode.SIGN_MODE_LEGACY_AMINO_JSON,
       msgs: [send],
-      memo: 'test from terra.js!',
+      memo: 'test from paloma.js!',
     })
     .then(tx => {
     	/*
     	tx.body.messages[0] = new MsgSend(
-    'terra1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v',
-    'terra17lmam6zguazs5q5u6z5mmx76uj63gldnse2pdp',
+    'paloma1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v',
+    'paloma17lmam6zguazs5q5u6z5mmx76uj63gldnse2pdp',
     { uluna: 2000 }
 		);
 		*/

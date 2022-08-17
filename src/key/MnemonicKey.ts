@@ -1,4 +1,4 @@
-// Adapted from https://github.com/terra-money/terra-js/blob/master/src/utils/keyUtils.ts
+// Adapted from https://github.com/paloma-money/paloma-js/blob/master/src/utils/keyUtils.ts
 
 import * as bip32 from 'bip32';
 import * as bip39 from 'bip39';
@@ -79,8 +79,8 @@ export class MnemonicKey extends RawKey {
     const seed: Buffer = bip39.mnemonicToSeedSync(mnemonic);
     const masterKey = bip32.fromSeed(seed);
     const hdPathLuna = `m/44'/${coinType}'/${account}'/0/${index}`;
-    const terraHD = masterKey.derivePath(hdPathLuna);
-    const privateKey = terraHD.privateKey;
+    const palomaHD = masterKey.derivePath(hdPathLuna);
+    const privateKey = palomaHD.privateKey;
 
     if (!privateKey) {
       throw new Error('Failed to derive key pair');

@@ -1,8 +1,8 @@
 import { JSONSerializable } from '../../../util/json';
 import { AccAddress } from '../../bech32';
-import { Any } from '@terra-money/terra.proto/google/protobuf/any';
-import { MsgUpdateContractAdmin as MsgUpdateContractAdmin_legacy_pb } from '@terra-money/legacy.proto/terra/wasm/v1beta1/tx';
-import { MsgUpdateAdmin as MsgUpdateAdmin_pb } from '@terra-money/terra.proto/cosmwasm/wasm/v1/tx';
+import { Any } from '@palomachain/paloma.proto/google/protobuf/any';
+import { MsgUpdateContractAdmin as MsgUpdateContractAdmin_legacy_pb } from '@palomachain/legacy.proto/terra/wasm/v1beta1/tx';
+import { MsgUpdateAdmin as MsgUpdateAdmin_pb } from '@palomachain/paloma.proto/cosmwasm/wasm/v1/tx';
 
 export class MsgUpdateContractAdmin extends JSONSerializable<
   MsgUpdateContractAdmin.Amino,
@@ -95,7 +95,7 @@ export class MsgUpdateContractAdmin extends JSONSerializable<
   public packAny(isClassic?: boolean): Any {
     if (isClassic) {
       return Any.fromPartial({
-        typeUrl: '/terra.wasm.v1beta1.MsgUpdateContractAdmin',
+        typeUrl: '/paloma.wasm.v1beta1.MsgUpdateContractAdmin',
         value: MsgUpdateContractAdmin_legacy_pb.encode(
           this.toProto(isClassic) as MsgUpdateContractAdmin_legacy_pb
         ).finish(),
@@ -146,7 +146,7 @@ export class MsgUpdateContractAdmin extends JSONSerializable<
     const { admin, new_admin, contract } = this;
     if (isClassic) {
       return {
-        '@type': '/terra.wasm.v1beta1.MsgUpdateContractAdmin',
+        '@type': '/paloma.wasm.v1beta1.MsgUpdateContractAdmin',
         admin,
         new_admin,
         contract,
@@ -182,7 +182,7 @@ export namespace MsgUpdateContractAdmin {
   }
 
   export interface DataV1 {
-    '@type': '/terra.wasm.v1beta1.MsgUpdateContractAdmin';
+    '@type': '/paloma.wasm.v1beta1.MsgUpdateContractAdmin';
     admin: AccAddress;
     new_admin: AccAddress;
     contract: AccAddress;

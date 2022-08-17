@@ -1,6 +1,6 @@
 import { JSONSerializable } from '../../../util/json';
-import { GenericAuthorization as GenericAuthorization_pb } from '@terra-money/terra.proto/cosmos/authz/v1beta1/authz';
-import { Any } from '@terra-money/terra.proto/google/protobuf/any';
+import { GenericAuthorization as GenericAuthorization_pb } from '@palomachain/paloma.proto/cosmos/authz/v1beta1/authz';
+import { Any } from '@palomachain/paloma.proto/google/protobuf/any';
 
 export class GenericAuthorization extends JSONSerializable<
   GenericAuthorization.Amino,

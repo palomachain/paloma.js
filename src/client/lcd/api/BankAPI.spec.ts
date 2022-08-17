@@ -3,7 +3,7 @@ import { BankAPI } from './BankAPI';
 
 const paloma = new LCDClient({
   chainID: 'pisco-1',
-  URL: 'https://pisco-lcd.paloma.dev',
+  URL: 'http://rbox.palomachain.com:1317',
 });
 const bank = new BankAPI(paloma);
 

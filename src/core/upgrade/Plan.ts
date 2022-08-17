@@ -1,5 +1,5 @@
 import { JSONSerializable } from '../../util/json';
-import { Plan as Plan_pb } from '@terra-money/terra.proto/cosmos/upgrade/v1beta1/upgrade';
+import { Plan as Plan_pb } from '@palomachain/paloma.proto/cosmos/upgrade/v1beta1/upgrade';
 import Long from 'long';
 
 /*

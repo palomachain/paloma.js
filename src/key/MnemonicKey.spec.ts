@@ -70,7 +70,7 @@ describe('MnemonicKey', () => {
       data: { single },
     } = await mk.createSignatureAmino(signDoc, true);
     expect((single as any).signature).toEqual(
-      'FJKAXRxNB5ruqukhVqZf3S/muZEUmZD10fVmWycdVIxVWiCXXFsUy2VY2jINEOUGNwfrqEZsT2dUfAvWj8obLg=='
+      'n0N2fjCxPdaHJN7ZVeEcjn9JACBSiHQ+Kv0Ulf9tUxIVCwrRkdQGoxqKmGhL0D0HbbUh2sUVNAHDAeUR57CUxg=='
     );
   });
 
@@ -174,7 +174,7 @@ describe('MnemonicKey', () => {
 
     const signature = await key.createSignatureAmino(signDoc, true);
     expect((signature.data.single as any).signature).toEqual(
-      'YA/ToXLxuuAOQlpm5trbIUu2zv5NfBmeHz2jmXgNrt8jP+odukerfri3DUXAJuhETAMHVVV78t7Q4xC0j+CVkA=='
+      'eShv5R2BiorPXCBp5VylW8nd1JFhD6vCX3V2uF76ro19ydl9Znhh/1+NYBHesTDqNTGyBDmjJyQkEjly6F0WZg=='
     );
   });
 });

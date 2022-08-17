@@ -1,7 +1,7 @@
 import { LocalTerra, WebSocketClient } from '../src';
 
 const wsclient = new WebSocketClient('ws://localhost:26657/websocket');
-const terra = new LocalTerra();
+const paloma = new LocalTerra();
 let count = 0;
 
 wsclient.subscribe('NewBlock', {}, () => {
@@ -18,7 +18,7 @@ wsclient.subscribe(
   'Tx',
   {
     'message.action': '/cosmos.bank.v1beta1.MsgSend',
-    'message.sender': ['CONTAINS', 'terra1'], // always true
+    'message.sender': ['CONTAINS', 'paloma1'], // always true
   },
   data => {
     console.log('Send occured!');
@@ -27,9 +27,9 @@ wsclient.subscribe(
 );
 
 // swap tracker
-wsclient.subscribeTx({ 'message.action': '/terra.market.v1beta1.MsgSwap' }, async data => {
+wsclient.subscribeTx({ 'message.action': '/paloma.market.v1beta1.MsgSwap' }, async data => {
   console.log('Swap occured!');
-  const txInfo = await terra.tx.txInfo(data.value.TxResult.txhash);
+  const txInfo = await paloma.tx.txInfo(data.value.TxResult.txhash);
   if (txInfo.logs) {
     console.log(txInfo.logs[0].eventsByType);
   }

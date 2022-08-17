@@ -14,7 +14,7 @@ describe('MsgAggregateExchangeRateVote', () => {
     );
     msg.getPrevote();
     expect(msg.getAggregateVoteHash()).toEqual(
-      '7929908433e7399845fa60f9ef70ef7f2bb8f01b'
+      'a12549823646f6df41410c9cced6b3d3d19396f3'
     );
   });
   it('conversion', () => {

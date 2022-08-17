@@ -2,7 +2,7 @@ import { LCDClient, getContractEvents } from '../src';
 
 const bombay = new LCDClient({
   chainID: 'bombay-12',
-  URL: 'https://bombay-lcd.terra.dev',
+  URL: 'https://bombay-lcd.paloma.dev',
 });
 
 bombay.tx

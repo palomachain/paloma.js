@@ -1,8 +1,8 @@
 import { LCDClient } from '../src';
 
-const terra = new LCDClient({
+const paloma = new LCDClient({
   chainID: 'bombay-12',
-  URL: 'https://bombay-lcd.terra.dev',
+  URL: 'https://bombay-lcd.paloma.dev',
 });
 
-terra.utils.validatorsWithVotingPower().then(x => console.log(x));
+paloma.utils.validatorsWithVotingPower().then(x => console.log(x));

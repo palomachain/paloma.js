@@ -8,11 +8,11 @@ import {
   BlockIDFlag,
   blockIDFlagFromJSON,
   blockIDFlagToJSON,
-} from '@terra-money/terra.proto/tendermint/types/types';
+} from '@palomachain/paloma.proto/tendermint/types/types';
 import {
   Validator as Validator_pb,
   ValidatorSet as ValidatorSet_pb,
-} from '@terra-money/terra.proto/tendermint/types/validator';
+} from '@palomachain/paloma.proto/tendermint/types/validator';
 
 import * as Long from 'long';
 import { JSONSerializable } from '../../../../../util/json';

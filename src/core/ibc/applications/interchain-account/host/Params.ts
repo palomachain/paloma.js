@@ -1,4 +1,4 @@
-import { Params as Params_pb } from '@terra-money/terra.proto/ibc/applications/interchain_accounts/host/v1/host';
+import { Params as Params_pb } from '@palomachain/paloma.proto/ibc/applications/interchain_accounts/host/v1/host';
 import { JSONSerializable } from '../../../../../util/json';
 
 /**

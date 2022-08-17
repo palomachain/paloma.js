@@ -4,7 +4,7 @@ import {
   Vote as Vote_pb,
   VoteOption,
   WeightedVoteOption as WeightedVoteOption_pb,
-} from '@terra-money/terra.proto/cosmos/gov/v1beta1/gov';
+} from '@palomachain/paloma.proto/cosmos/gov/v1beta1/gov';
 import { Dec, Numeric } from '../numeric';
 import * as Long from 'long';
 /**

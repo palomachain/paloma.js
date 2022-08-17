@@ -2,7 +2,7 @@ import { LCDClient } from '../src';
 
 async function main() {
   const bombay = new LCDClient({
-    chainID: 'localterra',
+    chainID: 'localpaloma',
     URL: 'http://localhost:1317',
     gasPrices: { uusd: 0.38 },
   });

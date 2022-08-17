@@ -1,5 +1,5 @@
-import { Consensus as Consensus_pb } from '@terra-money/terra.proto/tendermint/version/types';
-import { App as App_pb } from '@terra-money/terra.proto/tendermint/version/types';
+import { Consensus as Consensus_pb } from '@palomachain/paloma.proto/tendermint/version/types';
+import { App as App_pb } from '@palomachain/paloma.proto/tendermint/version/types';
 import * as Long from 'long';
 import { JSONSerializable } from '../../../../../util/json';
 

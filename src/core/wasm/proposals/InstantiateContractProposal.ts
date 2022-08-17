@@ -1,8 +1,8 @@
 import { JSONSerializable, removeNull } from '../../../util/json';
 import { AccAddress } from '../../bech32';
 import { Coins } from '../../Coins';
-import { Any } from '@terra-money/terra.proto/google/protobuf/any';
-import { InstantiateContractProposal as InstantiateContractProposal_pb } from '@terra-money/terra.proto/cosmwasm/wasm/v1/proposal';
+import { Any } from '@palomachain/paloma.proto/google/protobuf/any';
+import { InstantiateContractProposal as InstantiateContractProposal_pb } from '@palomachain/paloma.proto/cosmwasm/wasm/v1/proposal';
 import * as Long from 'long';
 
 /**

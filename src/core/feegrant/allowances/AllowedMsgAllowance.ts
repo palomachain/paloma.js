@@ -1,8 +1,8 @@
 import { JSONSerializable } from '../../../util/json';
 import { BasicAllowance } from './BasicAllowance';
 import { PeriodicAllowance } from './PeriodicAllowance';
-import { Any } from '@terra-money/terra.proto/google/protobuf/any';
-import { AllowedMsgAllowance as AllowedMsgAllowance_pb } from '@terra-money/terra.proto/cosmos/feegrant/v1beta1/feegrant';
+import { Any } from '@palomachain/paloma.proto/google/protobuf/any';
+import { AllowedMsgAllowance as AllowedMsgAllowance_pb } from '@palomachain/paloma.proto/cosmos/feegrant/v1beta1/feegrant';
 
 /**
  * AllowedMsgAllowance creates allowance only for specified message types.

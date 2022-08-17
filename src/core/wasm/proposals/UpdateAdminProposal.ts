@@ -1,7 +1,7 @@
 import { JSONSerializable } from '../../../util/json';
 import { AccAddress } from '../../bech32';
-import { Any } from '@terra-money/terra.proto/google/protobuf/any';
-import { UpdateAdminProposal as UpdateAdminProposal_pb } from '@terra-money/terra.proto/cosmwasm/wasm/v1/proposal';
+import { Any } from '@palomachain/paloma.proto/google/protobuf/any';
+import { UpdateAdminProposal as UpdateAdminProposal_pb } from '@palomachain/paloma.proto/cosmwasm/wasm/v1/proposal';
 
 /** UpdateAdminProposal gov proposal content type to set an admin for a contract. */
 export class UpdateAdminProposal extends JSONSerializable<

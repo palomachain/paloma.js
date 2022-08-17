@@ -1,6 +1,6 @@
 import { JSONSerializable } from '../../../util/json';
-import { Any } from '@terra-money/terra.proto/google/protobuf/any';
-import { ClientUpdateProposal as ClientUpdateProposal_pb } from '@terra-money/terra.proto/ibc/core/client/v1/client';
+import { Any } from '@palomachain/paloma.proto/google/protobuf/any';
+import { ClientUpdateProposal as ClientUpdateProposal_pb } from '@palomachain/paloma.proto/ibc/core/client/v1/client';
 
 /**
  * Proposal that allows updating IBC clients. If it passes, the substitute

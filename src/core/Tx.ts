@@ -3,12 +3,12 @@ import {
   SimplePublicKey,
   LegacyAminoMultisigPublicKey,
 } from './PublicKey';
-import { Any } from '@terra-money/terra.proto/google/protobuf/any';
+import { Any } from '@palomachain/paloma.proto/google/protobuf/any';
 import {
   SignMode as SignMode_pb,
   signModeFromJSON,
   signModeToJSON,
-} from '@terra-money/terra.proto/cosmos/tx/signing/v1beta1/signing';
+} from '@palomachain/paloma.proto/cosmos/tx/signing/v1beta1/signing';
 import {
   Tx as Tx_pb,
   TxBody as TxBody_pb,
@@ -17,7 +17,7 @@ import {
   AuthInfo as AuthInfo_pb,
   ModeInfo_Single as ModeInfoSingle_pb,
   ModeInfo_Multi as ModeInfoMulti_pb,
-} from '@terra-money/terra.proto/cosmos/tx/v1beta1/tx';
+} from '@palomachain/paloma.proto/cosmos/tx/v1beta1/tx';
 import { CompactBitArray } from './CompactBitArray';
 import { Msg } from './Msg';
 import { Fee } from './Fee';

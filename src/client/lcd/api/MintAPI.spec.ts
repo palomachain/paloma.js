@@ -4,7 +4,7 @@ import { MintAPI } from './MintAPI';
 
 const paloma = new LCDClient({
   chainID: 'pisco-1',
-  URL: 'https://pisco-lcd.paloma.dev',
+  URL: 'http://rbox.palomachain.com:1317',
 });
 const api = new MintAPI(paloma);
 

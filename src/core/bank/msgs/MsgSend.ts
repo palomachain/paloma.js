@@ -1,10 +1,10 @@
 import { Coins } from '../../Coins';
 import { JSONSerializable } from '../../../util/json';
 import { AccAddress } from '../../bech32';
-import { Any } from '@terra-money/legacy.proto/google/protobuf/any';
+import { Any } from '@palomachain/legacy.proto/google/protobuf/any';
 // there's no difference between two protos
-//import { MsgSend as MsgSend_legacy_pb } from '@terra-money/legacy.proto/cosmos/bank/v1beta1/tx';
-import { MsgSend as MsgSend_pb } from '@terra-money/terra.proto/cosmos/bank/v1beta1/tx';
+//import { MsgSend as MsgSend_legacy_pb } from '@palomachain/legacy.proto/cosmos/bank/v1beta1/tx';
+import { MsgSend as MsgSend_pb } from '@palomachain/paloma.proto/cosmos/bank/v1beta1/tx';
 
 /**
  * A basic message for sending [[Coins]] between Paloma accounts.

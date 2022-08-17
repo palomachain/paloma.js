@@ -3,9 +3,9 @@ import { BaseVestingAccount } from './BaseVestingAccount';
 import * as Long from 'long';
 import { PublicKey } from '../PublicKey';
 
-import { BaseVestingAccount as BaseVestingAccount_pb } from '@terra-money/terra.proto/cosmos/vesting/v1beta1/vesting';
-import { ContinuousVestingAccount as ContinuousVestingAccount_pb } from '@terra-money/terra.proto/cosmos/vesting/v1beta1/vesting';
-import { Any } from '@terra-money/terra.proto/google/protobuf/any';
+import { BaseVestingAccount as BaseVestingAccount_pb } from '@palomachain/paloma.proto/cosmos/vesting/v1beta1/vesting';
+import { ContinuousVestingAccount as ContinuousVestingAccount_pb } from '@palomachain/paloma.proto/cosmos/vesting/v1beta1/vesting';
+import { Any } from '@palomachain/paloma.proto/google/protobuf/any';
 
 /**
  * ContinuousVestingAccount implements the VestingAccount interface. It
