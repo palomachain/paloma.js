@@ -2,7 +2,7 @@ import { LCDClient } from './lcd/LCDClient';
 import { Wallet } from './lcd/Wallet';
 import { MnemonicKey } from '../key/MnemonicKey';
 
-const LOCALTERRA_MNEMONICS = {
+const LOCALPALOMA_MNEMONICS = {
   validator:
     'satisfy adjust timber high purchase tuition stool faith fine install that you unaware feed domain license impose boss human eager hat rent enjoy dawn',
   test1:
@@ -27,7 +27,7 @@ const LOCALTERRA_MNEMONICS = {
     'prefer forget visit mistake mixture feel eyebrow autumn shop pair address airport diesel street pass vague innocent poem method awful require hurry unhappy shoulder',
 };
 
-export class LocalTerra extends LCDClient {
+export class LocalPaloma extends LCDClient {
   public wallets: {
     validator: Wallet;
     test1: Wallet;
@@ -51,37 +51,37 @@ export class LocalTerra extends LCDClient {
 
     this.wallets = {
       validator: this.wallet(
-        new MnemonicKey({ mnemonic: LOCALTERRA_MNEMONICS.validator })
+        new MnemonicKey({ mnemonic: LOCALPALOMA_MNEMONICS.validator })
       ),
       test1: this.wallet(
-        new MnemonicKey({ mnemonic: LOCALTERRA_MNEMONICS.test1 })
+        new MnemonicKey({ mnemonic: LOCALPALOMA_MNEMONICS.test1 })
       ),
       test2: this.wallet(
-        new MnemonicKey({ mnemonic: LOCALTERRA_MNEMONICS.test2 })
+        new MnemonicKey({ mnemonic: LOCALPALOMA_MNEMONICS.test2 })
       ),
       test3: this.wallet(
-        new MnemonicKey({ mnemonic: LOCALTERRA_MNEMONICS.test3 })
+        new MnemonicKey({ mnemonic: LOCALPALOMA_MNEMONICS.test3 })
       ),
       test4: this.wallet(
-        new MnemonicKey({ mnemonic: LOCALTERRA_MNEMONICS.test4 })
+        new MnemonicKey({ mnemonic: LOCALPALOMA_MNEMONICS.test4 })
       ),
       test5: this.wallet(
-        new MnemonicKey({ mnemonic: LOCALTERRA_MNEMONICS.test5 })
+        new MnemonicKey({ mnemonic: LOCALPALOMA_MNEMONICS.test5 })
       ),
       test6: this.wallet(
-        new MnemonicKey({ mnemonic: LOCALTERRA_MNEMONICS.test6 })
+        new MnemonicKey({ mnemonic: LOCALPALOMA_MNEMONICS.test6 })
       ),
       test7: this.wallet(
-        new MnemonicKey({ mnemonic: LOCALTERRA_MNEMONICS.test7 })
+        new MnemonicKey({ mnemonic: LOCALPALOMA_MNEMONICS.test7 })
       ),
       test8: this.wallet(
-        new MnemonicKey({ mnemonic: LOCALTERRA_MNEMONICS.test8 })
+        new MnemonicKey({ mnemonic: LOCALPALOMA_MNEMONICS.test8 })
       ),
       test9: this.wallet(
-        new MnemonicKey({ mnemonic: LOCALTERRA_MNEMONICS.test9 })
+        new MnemonicKey({ mnemonic: LOCALPALOMA_MNEMONICS.test9 })
       ),
       test10: this.wallet(
-        new MnemonicKey({ mnemonic: LOCALTERRA_MNEMONICS.test10 })
+        new MnemonicKey({ mnemonic: LOCALPALOMA_MNEMONICS.test10 })
       ),
     };
   }

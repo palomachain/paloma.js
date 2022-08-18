@@ -3,7 +3,7 @@ import {
   MsgInstantiateContract,
   MsgExecuteContract,
   isTxError,
-  LocalTerra,
+  LocalPaloma,
   getCodeId,
   getContractAddress,
 } from '../src';
@@ -11,7 +11,7 @@ import { AccessConfig, AccessType } from '../src/core/wasm/AccessConfig';
 import * as fs from 'fs';
 
 const isLegacy = false;
-const paloma = new LocalTerra(isLegacy);
+const paloma = new LocalPaloma(isLegacy);
 
 // test1 key from localpaloma accounts
 const { test1 } = paloma.wallets;

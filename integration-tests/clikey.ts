@@ -1,8 +1,8 @@
 import { Fee, MsgSend } from '../src';
-import { LocalTerra } from '../src';
+import { LocalPaloma } from '../src';
 import { CLIKey } from '../src/key/CLIKey';
 
-const paloma = new LocalTerra();
+const paloma = new LocalPaloma();
 const { test1 } = paloma.wallets;
 const cliKey = new CLIKey({ keyName: 'operator' });
 

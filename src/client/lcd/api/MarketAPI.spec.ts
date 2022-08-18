@@ -4,7 +4,7 @@ import { LCDClient } from '../LCDClient';
 
 const paloma = new LCDClient({
   chainID: 'pisco-1',
-  URL: 'http://rbox.palomachain.com:1317/',
+  URL: 'http://localhost:1317/',
 });
 const market = new MarketAPI(paloma);
 

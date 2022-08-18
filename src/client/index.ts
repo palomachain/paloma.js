@@ -4,7 +4,7 @@ export * from './lcd/Wallet';
 export * from './lcd/api';
 
 // LocalPaloma (LCDClient)
-export * from './LocalTerra';
+export * from './LocalPaloma';
 
 // WebSocketClient
 export * from './WebSocketClient';

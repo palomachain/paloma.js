@@ -1,11 +1,11 @@
 import {
   MsgSubmitProposal,
-  LocalTerra,
+  LocalPaloma,
   ParameterChangeProposal,
 } from '../src';
 
 // test1 key from localpaloma accounts
-const paloma = new LocalTerra();
+const paloma = new LocalPaloma();
 const { test1 } = paloma.wallets;
 
 const proposal = new ParameterChangeProposal('testing params', 'yay!', [

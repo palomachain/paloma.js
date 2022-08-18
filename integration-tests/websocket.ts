@@ -1,7 +1,7 @@
-import { LocalTerra, WebSocketClient } from '../src';
+import { LocalPaloma, WebSocketClient } from '../src';
 
 const wsclient = new WebSocketClient('ws://localhost:26657/websocket');
-const paloma = new LocalTerra();
+const paloma = new LocalPaloma();
 let count = 0;
 
 wsclient.subscribe('NewBlock', {}, () => {

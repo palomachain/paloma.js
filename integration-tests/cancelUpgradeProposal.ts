@@ -1,9 +1,5 @@
-import {
-  LCDClient,
-  MnemonicKey,
-  MsgSubmitProposal,
-} from '../src';
-import { CancelSoftwareUpgradeProposal } from '../src/core/upgrade/proposals'
+import { LCDClient, MnemonicKey, MsgSubmitProposal } from '../src';
+import { CancelSoftwareUpgradeProposal } from '../src/core/upgrade/proposals';
 
 const client = new LCDClient({
   chainID: 'localpaloma',
@@ -19,7 +15,10 @@ const mk = new MnemonicKey({
 
 const wallet = client.wallet(mk);
 
-const prop = new CancelSoftwareUpgradeProposal("UPGRADE PROPOSAL", "SOFTWARE UPGRADE DESC");
+const prop = new CancelSoftwareUpgradeProposal(
+  'UPGRADE PROPOSAL',
+  'SOFTWARE UPGRADE DESC'
+);
 
 async function main() {
   const execute = new MsgSubmitProposal(

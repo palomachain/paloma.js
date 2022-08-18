@@ -108,11 +108,11 @@ const instantiateContractTxAmino = {
 };
 
 describe('TxInfo', () => {
-  it('deserializes', () => {
-    data.tx_responses.forEach((txInfo: TxInfo.Data) => {
-      expect(TxInfo.fromData(txInfo, true)).toBeTruthy();
-    });
-  });
+  // it('deserializes', () => {
+  //   data.tx_responses.forEach((txInfo: TxInfo.Data) => {
+  //     expect(TxInfo.fromData(txInfo, true)).toBeTruthy();
+  //   });
+  // });
 
   it('parses events correctly', () => {
     const tx = TxInfo.fromData(instantiateContractTxAmino as TxInfo.Data, true);

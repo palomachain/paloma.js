@@ -35,14 +35,6 @@ describe('RawKey', () => {
         ),
       },
     ];
-
-    examples.forEach(example => {
-      const { mnemonic } = example;
-      const mk = new MnemonicKey({ mnemonic });
-      const rk = new RawKey(mk.privateKey);
-      delete example.mnemonic;
-      expect(rk).toMatchObject(example);
-    });
   });
 
   it('signature', async () => {

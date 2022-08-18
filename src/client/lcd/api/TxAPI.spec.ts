@@ -12,7 +12,7 @@ const mk = new MnemonicKey({
 
 const paloma = new LCDClient({
   chainID: 'pisco-1',
-  URL: 'http://rbox.palomachain.com:1317',
+  URL: 'http://localhost:1317',
 });
 
 const txAPI = new TxAPI(paloma);

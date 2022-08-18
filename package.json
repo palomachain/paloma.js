@@ -30,6 +30,7 @@
   "scripts": {
     "build": "tsc --module commonjs && webpack --mode production",
     "test": "jest",
+    "integration_test": "INTEGRATION=TRUE jest",
     "format": "prettier --check ./src/**/*.ts",
     "format:fix": "prettier --write ./src/**/*.ts",
     "lint": "eslint src --ext .js,.ts",
