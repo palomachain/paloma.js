@@ -30,15 +30,16 @@ function checkPrefixAndLength(
 
 export namespace AccAddress {
   /**
-   * Checks if a string is a valid Terra account address.
+   * Checks if a string is a valid Paloma account address.
    *
    * @param data string to check
    */
   export function validate(data: string): boolean {
     // 44 for normal account and 64 for contract account
+    //const vals = bech32.decode(data);
     return (
-      checkPrefixAndLength('paloma', data, 44) ||
-      checkPrefixAndLength('paloma', data, 64)
+      checkPrefixAndLength('paloma', data, 45) ||
+      checkPrefixAndLength('paloma', data, 65)
     );
   }
 
@@ -55,16 +56,16 @@ export namespace AccAddress {
 
 export namespace AccPubKey {
   /**
-   * Checks if a string is a Terra account's public key
+   * Checks if a string is a Paloma account's public key
    * @param data string to check
    */
 
   export function validate(data: string): boolean {
-    return checkPrefixAndLength('palomapub', data, 47);
+    return checkPrefixAndLength('palomapub', data, 48);
   }
 
   /**
-   * Converts a Terra validator pubkey to an account pubkey.
+   * Converts a Paloma validator pubkey to an account pubkey.
    * @param address validator pubkey to convert
    */
   export function fromAccAddress(address: AccAddress): AccPubKey {
@@ -75,16 +76,16 @@ export namespace AccPubKey {
 
 export namespace ValAddress {
   /**
-   * Checks if a string is a Terra validator address.
+   * Checks if a string is a Paloma validator address.
    *
    * @param data string to check
    */
   export function validate(data: string): boolean {
-    return checkPrefixAndLength('palomavaloper', data, 51);
+    return checkPrefixAndLength('palomavaloper', data, 52);
   }
 
   /**
-   * Converts a Terra account address to a validator address.
+   * Converts a Paloma account address to a validator address.
    * @param address account address to convert
    */
   export function fromAccAddress(address: AccAddress): ValAddress {
@@ -95,15 +96,15 @@ export namespace ValAddress {
 
 export namespace ValPubKey {
   /**
-   * Checks if a string is a Terra validator pubkey
+   * Checks if a string is a Paloma validator pubkey
    * @param data string to check
    */
   export function validate(data: string): boolean {
-    return checkPrefixAndLength('palomavaloperpub', data, 54);
+    return checkPrefixAndLength('palomavaloperpub', data, 55);
   }
 
   /**
-   * Converts a Terra validator operator address to a validator pubkey.
+   * Converts a Paloma validator operator address to a validator pubkey.
    * @param valAddress account pubkey
    */
   export function fromValAddress(valAddress: ValAddress): ValPubKey {
@@ -114,11 +115,11 @@ export namespace ValPubKey {
 
 export namespace ValConsAddress {
   /**
-   * Checks if a string is a Terra validator consensus address
+   * Checks if a string is a Paloma validator consensus address
    * @param data string to check
    */
 
   export function validate(data: string): boolean {
-    return checkPrefixAndLength('palomavalcons', data, 51);
+    return checkPrefixAndLength('palomavalcons', data, 52);
   }
 }

@@ -1,10 +1,10 @@
 import { JSONSerializable } from '../../../util/json';
 import { AccAddress } from '../../bech32';
 import { Coins } from '../../Coins';
-import { Any } from '@terra-money/terra.proto/google/protobuf/any';
+import { Any } from '@palomachain/paloma.proto/google/protobuf/any';
 // there's no difference between two protos
-// import { MsgFundCommunityPool as MsgFundCommunityPool_legacy_pb } from '@terra-money/legacy.proto/cosmos/distribution/v1beta1/tx';
-import { MsgFundCommunityPool as MsgFundCommunityPool_pb } from '@terra-money/terra.proto/cosmos/distribution/v1beta1/tx';
+// import { MsgFundCommunityPool as MsgFundCommunityPool_legacy_pb } from '@palomachain/legacy.proto/cosmos/distribution/v1beta1/tx';
+import { MsgFundCommunityPool as MsgFundCommunityPool_pb } from '@palomachain/paloma.proto/cosmos/distribution/v1beta1/tx';
 
 export class MsgFundCommunityPool extends JSONSerializable<
   MsgFundCommunityPool.Amino,

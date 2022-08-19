@@ -1,9 +1,9 @@
 import { JSONSerializable, removeNull } from '../../../util/json';
 import { AccAddress } from '../../bech32';
 import { Coins } from '../../Coins';
-import { Any } from '@terra-money/terra.proto/google/protobuf/any';
-import { MsgInstantiateContract as MsgInstantiateContract_legacy_pb } from '@terra-money/legacy.proto/terra/wasm/v1beta1/tx';
-import { MsgInstantiateContract as MsgInstantiateContract_pb } from '@terra-money/terra.proto/cosmwasm/wasm/v1/tx';
+import { Any } from '@palomachain/paloma.proto/google/protobuf/any';
+import { MsgInstantiateContract as MsgInstantiateContract_legacy_pb } from '@palomachain/legacy.proto/terra/wasm/v1beta1/tx';
+import { MsgInstantiateContract as MsgInstantiateContract_pb } from '@palomachain/paloma.proto/cosmwasm/wasm/v1/tx';
 import * as Long from 'long';
 
 export class MsgInstantiateContract extends JSONSerializable<
@@ -143,7 +143,7 @@ export class MsgInstantiateContract extends JSONSerializable<
   public packAny(isClassic?: boolean): Any {
     if (isClassic) {
       return Any.fromPartial({
-        typeUrl: '/terra.wasm.v1beta1.MsgInstantiateContract',
+        typeUrl: '/paloma.wasm.v1beta1.MsgInstantiateContract',
         value: MsgInstantiateContract_legacy_pb.encode(
           this.toProto(isClassic) as MsgInstantiateContract_legacy_pb
         ).finish(),
@@ -207,7 +207,7 @@ export class MsgInstantiateContract extends JSONSerializable<
     const { sender, admin, code_id, label, init_msg, init_coins } = this;
     if (isClassic) {
       return {
-        '@type': '/terra.wasm.v1beta1.MsgInstantiateContract',
+        '@type': '/paloma.wasm.v1beta1.MsgInstantiateContract',
         sender,
         admin: admin || '',
         code_id: code_id.toFixed(),
@@ -253,7 +253,7 @@ export namespace MsgInstantiateContract {
   }
 
   export interface DataV1 {
-    '@type': '/terra.wasm.v1beta1.MsgInstantiateContract';
+    '@type': '/paloma.wasm.v1beta1.MsgInstantiateContract';
     sender: AccAddress;
     admin: AccAddress;
     code_id: string;

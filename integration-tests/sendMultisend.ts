@@ -13,7 +13,7 @@ async function main() {
   });
 
   const bombay = new LCDClient({
-    chainID: 'localterra',
+    chainID: 'localpaloma',
     URL: 'http://localhost:1317',
     gasPrices: { uluna: 0.38 },
     isClassic: true
@@ -22,18 +22,18 @@ async function main() {
   // create a simple message that moves coin balances
   const send = new MsgMultiSend(
     [
-      new MsgMultiSend.Input('terra1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v', {
+      new MsgMultiSend.Input('paloma1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v', {
         uluna: 100000,
       }),
-      new MsgMultiSend.Input('terra17lmam6zguazs5q5u6z5mmx76uj63gldnse2pdp', {
+      new MsgMultiSend.Input('paloma17lmam6zguazs5q5u6z5mmx76uj63gldnse2pdp', {
         uluna: 200000,
       }),
     ],
     [
-      new MsgMultiSend.Output('terra1757tkx08n0cqrw7p86ny9lnxsqeth0wgp0em95', {
+      new MsgMultiSend.Output('paloma1757tkx08n0cqrw7p86ny9lnxsqeth0wgp0em95', {
         uluna: 150000,
       }),
-      new MsgMultiSend.Output('terra1gufrav46pnpwf03yu7xz76ylkmatsxtplrxnmc', {
+      new MsgMultiSend.Output('paloma1gufrav46pnpwf03yu7xz76ylkmatsxtplrxnmc', {
         uluna: 150000,
       }),
     ]

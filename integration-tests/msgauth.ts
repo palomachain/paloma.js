@@ -62,11 +62,11 @@ function revoke(granter: Wallet, grantee: Wallet, msg_type_url: string) {
 async function main() {
   const client = new LCDClient({
     URL: 'http://localhost:1317',
-    chainID: 'localterra',
+    chainID: 'localpaloma',
     gasPrices: '169.77ukrw',
   });
 
-  // Granter (terra1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v)
+  // Granter (paloma1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v)
   const granter = client.wallet(
     new MnemonicKey({
       mnemonic:
@@ -74,7 +74,7 @@ async function main() {
     })
   );
 
-  // Grantee (terra17lmam6zguazs5q5u6z5mmx76uj63gldnse2pdp)
+  // Grantee (paloma17lmam6zguazs5q5u6z5mmx76uj63gldnse2pdp)
   const grantee = client.wallet(
     new MnemonicKey({
       mnemonic:
@@ -106,7 +106,7 @@ async function main() {
     granter,
     grantee,
     // Test3
-    'terra1757tkx08n0cqrw7p86ny9lnxsqeth0wgp0em95',
+    'paloma1757tkx08n0cqrw7p86ny9lnxsqeth0wgp0em95',
     '2000000000000ukrw'
   )
     .then(tx => client.tx.broadcast(tx))

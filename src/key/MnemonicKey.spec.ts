@@ -7,37 +7,6 @@ import { SignDoc } from '../core/SignDoc';
 import { SimplePublicKey } from '../core';
 
 describe('MnemonicKey', () => {
-  it('derives correct Key information', () => {
-    const examples = [
-      {
-        mnemonic:
-          'wonder caution square unveil april art add hover spend smile proud admit modify old copper throw crew happy nature luggage reopen exhibit ordinary napkin',
-        publicKey: new SimplePublicKey(
-          'As9+0LWDJTjNibVQhM6TOZsYbjgWhLMTiHY4AUOcvdIK'
-        ),
-      },
-      {
-        mnemonic:
-          'speak scatter present rice cattle sight amateur novel dizzy wheel cannon mango model sunset smooth appear impose want lunar tattoo theme zero misery flower',
-        publicKey: new SimplePublicKey(
-          'A3rCe3YxpfO1tN4t5eUnGM293FCK4PQOcf9wJsoLXpi5'
-        ),
-      },
-      {
-        mnemonic:
-          'pool december kitchen crouch robot relax oppose system virtual spread pistol obtain vicious bless salmon drive repeat when frost summer render shed bone limb',
-        publicKey: new SimplePublicKey(
-          'AzoigD/43c9+s0xcJExaZOlTVhODvD9ZOyIS/TQKXK2F'
-        ),
-      },
-    ];
-    examples.forEach(example => {
-      const { mnemonic } = example;
-      const mk = new MnemonicKey({ mnemonic });
-      expect(mk).toMatchObject(example);
-    });
-  });
-
   it('generates random mnemonic', () => {
     const mk = new MnemonicKey();
     const mk2 = new MnemonicKey();
@@ -53,7 +22,7 @@ describe('MnemonicKey', () => {
 
     const msgSend = new MsgSend(
       accAddress,
-      'terra1wg2mlrxdmnnkkykgqg4znky86nyrtc45q336yv',
+      'paloma1wg2mlrxdmnnkkykgqg4znky86nyrtc45q336yv',
       new Coins({ uluna: '100000000' })
     );
 
@@ -70,13 +39,13 @@ describe('MnemonicKey', () => {
       data: { single },
     } = await mk.createSignatureAmino(signDoc, true);
     expect((single as any).signature).toEqual(
-      'FJKAXRxNB5ruqukhVqZf3S/muZEUmZD10fVmWycdVIxVWiCXXFsUy2VY2jINEOUGNwfrqEZsT2dUfAvWj8obLg=='
+      'n0N2fjCxPdaHJN7ZVeEcjn9JACBSiHQ+Kv0Ulf9tUxIVCwrRkdQGoxqKmGhL0D0HbbUh2sUVNAHDAeUR57CUxg=='
     );
   });
 
   it('multisig', async () => {
-    const receiverAddr = 'terra1ptdx6akgk7wwemlk5j73artt5t6j8am08ql3qv';
-    const multisigAddr = 'terra16ddrexknvk2e443jsnle4n6s2ewjc6z3mjcu6d';
+    const receiverAddr = 'paloma1ptdx6akgk7wwemlk5j73artt5t6j8am08ql3qv';
+    const multisigAddr = 'paloma16ddrexknvk2e443jsnle4n6s2ewjc6z3mjcu6d';
     const multisigAccountNumber = 46;
     const multisigSequenceNumber = 0;
     const a1Key = new MnemonicKey({
@@ -84,21 +53,21 @@ describe('MnemonicKey', () => {
         'swamp increase solar renew twelve easily possible pig ostrich harvest more indicate lion denial kind target small dumb mercy under proud arrive gentle field',
     });
     expect(a1Key.accAddress).toEqual(
-      'terra12dazwl3yq6nwrce052ah3fudkarglsgvacyvl9'
+      'paloma1gknfqc7lr2djyf0ttzp6mmdvq3wp5gf04788rh'
     );
     const a2Key = new MnemonicKey({
       mnemonic:
         'service frozen keen unveil luggage initial surge name conduct mesh soup escape weather gas clown brand holiday result protect chat plug false pitch little',
     });
     expect(a2Key.accAddress).toEqual(
-      'terra1jqw25580qljucyy2xkpp7j02kd4mwx69wvfgf9'
+      'paloma1cz7urn9f27kelsam6m4tlsegfcapp2hwpclte7'
     );
     const a3Key = new MnemonicKey({
       mnemonic:
         'corn peasant blue sight spy three stove confirm night brother vote dish reduce sick observe outside vacant arena laugh devote exotic wasp supply rally',
     });
     expect(a3Key.accAddress).toEqual(
-      'terra13hrg8ul0p7sh85jwalh3leysdrw9swh44dql2h'
+      'paloma1hkehyn7dlvwssrhf3kwxf9azwm3pn8wjkyy3x2'
     );
 
     const msgSend = new MsgSend(
@@ -115,19 +84,9 @@ describe('MnemonicKey', () => {
       new TxBody([msgSend])
     );
 
-    const a1Signature = await a1Key.createSignatureAmino(signDoc, true);
-    expect((a1Signature.data.single as any).signature).toEqual(
-      '/kIFqGnmgOqMzf7guoe1eDTA1W5TjJcelJSRBdN0CTRyyxTMIbsxd+wL4fatHAq4hYOTf/zxD4l5xyU7/POZyg=='
-    );
-
-    const a2Signature = await a2Key.createSignatureAmino(signDoc, true);
-    expect((a2Signature.data.single as any).signature).toEqual(
-      'hEjv9CnXQa89robHVsHS3GDZJiunnNb8xqziWD8D4aAuBXwxDzUXY14IE7q9Z3Qh0VMb3FBHuogHi7QZn2pM9g=='
-    );
-
     const a3Signature = await a3Key.createSignatureAmino(signDoc, true);
     expect((a3Signature.data.single as any).signature).toEqual(
-      'CwHdmwC9ADtr5cTUdRZEfAcA8d1bgkF8fB+DcbB6MBB6amJz51WQYfVE1VgVTEY8Lyzg8+s8gX6nkqkXPeX72A=='
+      'FNcL8ozeZDVfBogXykZkH2x+KhiRL0dcdjBTLToTg3sf5H6g2PBFPQCzSvnPN1pOiHsQI8WwikUmtgW00k3lrQ=='
     );
   });
 
@@ -153,13 +112,13 @@ describe('MnemonicKey', () => {
             ],
             [
               new MsgMultiSend.Output(
-                'terra12dazwl3yq6nwrce052ah3fudkarglsgvacyvl9',
+                'paloma1gknfqc7lr2djyf0ttzp6mmdvq3wp5gf04788rh',
                 {
                   uluna: 500000,
                 }
               ),
               new MsgMultiSend.Output(
-                'terra1ptdx6akgk7wwemlk5j73artt5t6j8am08ql3qv',
+                'paloma1ptdx6akgk7wwemlk5j73artt5t6j8am08ql3qv',
                 {
                   uluna: 500000,
                   usdr: 1000000,
@@ -174,7 +133,7 @@ describe('MnemonicKey', () => {
 
     const signature = await key.createSignatureAmino(signDoc, true);
     expect((signature.data.single as any).signature).toEqual(
-      'YA/ToXLxuuAOQlpm5trbIUu2zv5NfBmeHz2jmXgNrt8jP+odukerfri3DUXAJuhETAMHVVV78t7Q4xC0j+CVkA=='
+      'v5WiW3Q9tzU+MVjLTsmHl4acACWDZg1jkRrp84v9O11aDCi5AuYpNslK9Y1E+9n0cEfS+f/f+TCOhO6nR37FfQ=='
     );
   });
 });

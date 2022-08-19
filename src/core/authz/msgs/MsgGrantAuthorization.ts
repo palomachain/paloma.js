@@ -1,9 +1,9 @@
 import { JSONSerializable } from '../../../util/json';
 import { AccAddress } from '../../bech32';
 import { AuthorizationGrant } from '../authorizations';
-import { MsgGrant as MsgGrant_pb } from '@terra-money/terra.proto/cosmos/authz/v1beta1/tx';
-import { Any } from '@terra-money/terra.proto/google/protobuf/any';
-import { Grant as Grant_pb } from '@terra-money/terra.proto/cosmos/authz/v1beta1/authz';
+import { MsgGrant as MsgGrant_pb } from '@palomachain/paloma.proto/cosmos/authz/v1beta1/tx';
+import { Any } from '@palomachain/paloma.proto/google/protobuf/any';
+import { Grant as Grant_pb } from '@palomachain/paloma.proto/cosmos/authz/v1beta1/authz';
 
 export class MsgGrantAuthorization extends JSONSerializable<
   MsgGrantAuthorization.Amino,

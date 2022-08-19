@@ -1,7 +1,7 @@
 import { JSONSerializable } from '../../../util/json';
 import { ValAddress } from '../../bech32';
-import { Any } from '@terra-money/terra.proto/google/protobuf/any';
-import { MsgUnjail as MsgUnjail_pb } from '@terra-money/terra.proto/cosmos/slashing/v1beta1/tx';
+import { Any } from '@palomachain/paloma.proto/google/protobuf/any';
+import { MsgUnjail as MsgUnjail_pb } from '@palomachain/paloma.proto/cosmos/slashing/v1beta1/tx';
 
 /**
  * A validator can be jailed by the blockchain if misbehavior is detected, such as

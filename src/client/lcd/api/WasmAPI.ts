@@ -112,7 +112,7 @@ export class WasmAPI extends BaseAPI {
     params: APIParams = {}
   ): Promise<CodeInfo> {
     if (this.lcd.config.isClassic) {
-      const endpoint = `/terra/wasm/v1beta1/codes/${codeID}`;
+      const endpoint = `/paloma/wasm/v1beta1/codes/${codeID}`;
       return this.c
         .get<{ code_info: CodeInfo.DataV1 }>(endpoint, params)
         .then(({ code_info: d }) => ({
@@ -140,7 +140,7 @@ export class WasmAPI extends BaseAPI {
     params: APIParams = {}
   ): Promise<ContractInfo> {
     if (this.lcd.config.isClassic) {
-      const endpoint = `/terra/wasm/v1beta1/contracts/${contractAddress}`;
+      const endpoint = `/paloma/wasm/v1beta1/contracts/${contractAddress}`;
       return this.c
         .get<{ contract_info: ContractInfo.DataV1 }>(endpoint, params)
         .then(({ contract_info: d }) => ({
@@ -176,7 +176,7 @@ export class WasmAPI extends BaseAPI {
     params: APIParams = {}
   ): Promise<T> {
     if (this.lcd.config.isClassic) {
-      const endpoint = `/terra/wasm/v1beta1/contracts/${contractAddress}/store`;
+      const endpoint = `/paloma/wasm/v1beta1/contracts/${contractAddress}/store`;
       return this.c
         .get<{ query_result: T }>(endpoint, {
           ...params,
@@ -203,7 +203,7 @@ export class WasmAPI extends BaseAPI {
       throw new Error('Not supported for the network');
     }
     return this.c
-      .get<{ params: WasmParams.Data }>(`/terra/wasm/v1beta1/params`, params)
+      .get<{ params: WasmParams.Data }>(`/paloma/wasm/v1beta1/params`, params)
       .then(({ params: d }) => ({
         max_contract_size: Number.parseInt(d.max_contract_size),
         max_contract_gas: Number.parseInt(d.max_contract_gas),

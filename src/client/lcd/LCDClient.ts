@@ -74,20 +74,20 @@ const DEFAULT_GAS_PRICES_BY_CHAIN_ID: { [key: string]: Coins.Input } = {
 };
 
 /**
- * An object repesenting a connection to a terrad node running the Lite Client Daemon (LCD)
+ * An object repesenting a connection to a palomad node running the Lite Client Daemon (LCD)
  * server, a REST server providing access to a node.
  *
  * ### Example
  *
  * ```ts
- * import { LCDClient, Coin } from 'terra.js';
+ * import { LCDClient, Coin } from 'paloma.js';
  *
- * const terra = new LCDClient({
- *    URL: "https://lcd.terra.dev",
+ * const paloma = new LCDClient({
+ *    URL: "https://lcd.paloma.dev",
  *    chainID: "columbus-3"
  * });
  *
- * terra.market.swapRate(new Coin('uluna', 10000), 'ukrw').then(c => console.log(c.toString()));
+ * paloma.market.swapRate(new Coin('uluna', 10000), 'ukrw').then(c => console.log(c.toString()));
  * ```
  */
 

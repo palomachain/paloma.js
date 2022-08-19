@@ -1,9 +1,9 @@
 import { JSONSerializable } from '../../../../util/json';
 import { AccAddress } from '../../../bech32';
-import { Any } from '@terra-money/terra.proto/google/protobuf/any';
+import { Any } from '@palomachain/paloma.proto/google/protobuf/any';
 import { Height } from '../../core/client/Height';
 import { Packet } from '../../core/channel/Packet';
-import { MsgRecvPacket as MsgRecvPacket_pb } from '@terra-money/terra.proto/ibc/core/channel/v1/tx';
+import { MsgRecvPacket as MsgRecvPacket_pb } from '@palomachain/paloma.proto/ibc/core/channel/v1/tx';
 
 /**
  * MsgRecvPacket receives incoming IBC packet

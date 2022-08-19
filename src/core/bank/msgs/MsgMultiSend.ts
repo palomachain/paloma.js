@@ -1,14 +1,14 @@
 import { JSONSerializable } from '../../../util/json';
 import { Coins } from '../../Coins';
 import { AccAddress } from '../../bech32';
-import { Any } from '@terra-money/legacy.proto/google/protobuf/any';
+import { Any } from '@palomachain/legacy.proto/google/protobuf/any';
 // there's no difference between two protos
-//import { MsgMultiSend as MsgMultiSend_legacy_pb } from '@terra-money/legacy.proto/cosmos/bank/v1beta1/tx';
-import { MsgMultiSend as MsgMultiSend_pb } from '@terra-money/terra.proto/cosmos/bank/v1beta1/tx';
+//import { MsgMultiSend as MsgMultiSend_legacy_pb } from '@palomachain/legacy.proto/cosmos/bank/v1beta1/tx';
+import { MsgMultiSend as MsgMultiSend_pb } from '@palomachain/paloma.proto/cosmos/bank/v1beta1/tx';
 import {
   Input as Input_pb,
   Output as Output_pb,
-} from '@terra-money/terra.proto/cosmos/bank/v1beta1/bank';
+} from '@palomachain/paloma.proto/cosmos/bank/v1beta1/bank';
 
 /**
  * If you have multiple senders and/or multiple recipients, you can use MsgMultiSend,
@@ -25,23 +25,23 @@ import {
  *
  * const inputs: MsgMultiSend.Input[] = [
  *    new MsgMultiSend.Input(
- *      'terra105rz2q5a4w7nv7239tl9c4px5cjy7axx3axf6p',
+ *      'paloma105rz2q5a4w7nv7239tl9c4px5cjy7axx3axf6p',
  *      {
  *        ukrw: 123123,
  *      })
  *    ),
- *    new MsgMultiSend.Input('terra105rz2q5a4w7nv7239tl9c4px5cjy7axx3axfad', [
+ *    new MsgMultiSend.Input('paloma105rz2q5a4w7nv7239tl9c4px5cjy7axx3axfad', [
  *      new Coin('uluna', 123123),
  *    ]),
  *  ];
  *   const outputs: MsgMultiSend.Output[] = [
  *    new MsgMultiSend.Output(
- *      'terra105rz2q5a4w7nv7239tl9c4px5cjy7axx3axfad',
+ *      'paloma105rz2q5a4w7nv7239tl9c4px5cjy7axx3axfad',
  *        {
  *          ukrw: 123123,
  *        }
  *    ),
- *    new MsgMultiSend.Output('terra105rz2q5a4w7nv7239tl9c4px5cjy7axx3axfga',
+ *    new MsgMultiSend.Output('paloma105rz2q5a4w7nv7239tl9c4px5cjy7axx3axfga',
  *      {
  *        uluna: 123123,
  *      }

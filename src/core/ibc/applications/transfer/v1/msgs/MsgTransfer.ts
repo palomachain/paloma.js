@@ -2,8 +2,8 @@ import { JSONSerializable } from '../../../../../../util/json';
 import { AccAddress } from '../../../../../bech32';
 import { Coin } from '../../../../../Coin';
 import * as Long from 'long';
-import { Any } from '@terra-money/terra.proto/google/protobuf/any';
-import { MsgTransfer as MsgTransfer_pb } from '@terra-money/terra.proto/ibc/applications/transfer/v1/tx';
+import { Any } from '@palomachain/paloma.proto/google/protobuf/any';
+import { MsgTransfer as MsgTransfer_pb } from '@palomachain/paloma.proto/ibc/applications/transfer/v1/tx';
 import { Height } from '../../../../core/client/Height';
 import { Numeric } from '../../../../../numeric';
 /**

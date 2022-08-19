@@ -1,8 +1,8 @@
 import { JSONSerializable } from '../../../util/json';
 import { Coins } from '../../Coins';
 import { BasicAllowance } from './BasicAllowance';
-import { Any } from '@terra-money/terra.proto/google/protobuf/any';
-import { PeriodicAllowance as PeriodicAllowance_pb } from '@terra-money/terra.proto/cosmos/feegrant/v1beta1/feegrant';
+import { Any } from '@palomachain/paloma.proto/google/protobuf/any';
+import { PeriodicAllowance as PeriodicAllowance_pb } from '@palomachain/paloma.proto/cosmos/feegrant/v1beta1/feegrant';
 import * as Long from 'long';
 /**
  * PeriodicAllowance extends Allowance to allow for both a maximum cap,

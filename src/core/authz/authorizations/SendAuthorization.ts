@@ -1,7 +1,7 @@
 import { JSONSerializable } from '../../../util/json';
 import { Coins } from '../../Coins';
-import { SendAuthorization as SendAuthorization_pb } from '@terra-money/terra.proto/cosmos/bank/v1beta1/authz';
-import { Any } from '@terra-money/terra.proto/google/protobuf/any';
+import { SendAuthorization as SendAuthorization_pb } from '@palomachain/paloma.proto/cosmos/bank/v1beta1/authz';
+import { Any } from '@palomachain/paloma.proto/google/protobuf/any';
 
 export class SendAuthorization extends JSONSerializable<
   SendAuthorization.Amino,

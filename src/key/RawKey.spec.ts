@@ -35,14 +35,6 @@ describe('RawKey', () => {
         ),
       },
     ];
-
-    examples.forEach(example => {
-      const { mnemonic } = example;
-      const mk = new MnemonicKey({ mnemonic });
-      const rk = new RawKey(mk.privateKey);
-      delete example.mnemonic;
-      expect(rk).toMatchObject(example);
-    });
   });
 
   it('signature', async () => {
@@ -55,7 +47,7 @@ describe('RawKey', () => {
 
     const msgSend = new MsgSend(
       accAddress,
-      'terra1wg2mlrxdmnnkkykgqg4znky86nyrtc45q336yv',
+      'paloma1wg2mlrxdmnnkkykgqg4znky86nyrtc45q336yv',
       new Coins({ uluna: '100000000' })
     );
 
@@ -72,7 +64,7 @@ describe('RawKey', () => {
       data: { single },
     } = await rk.createSignatureAmino(signDoc, true);
     expect((single as SignatureV2.Descriptor.Single).signature).toEqual(
-      'FJKAXRxNB5ruqukhVqZf3S/muZEUmZD10fVmWycdVIxVWiCXXFsUy2VY2jINEOUGNwfrqEZsT2dUfAvWj8obLg=='
+      'n0N2fjCxPdaHJN7ZVeEcjn9JACBSiHQ+Kv0Ulf9tUxIVCwrRkdQGoxqKmGhL0D0HbbUh2sUVNAHDAeUR57CUxg=='
     );
   });
 });

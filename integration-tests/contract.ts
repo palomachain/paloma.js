@@ -3,7 +3,7 @@ import {
   MsgInstantiateContract,
   MsgExecuteContract,
   isTxError,
-  LocalTerra,
+  LocalPaloma,
   getCodeId,
   getContractAddress,
 } from '../src';
@@ -11,10 +11,10 @@ import { AccessConfig, AccessType } from '../src/core/wasm/AccessConfig';
 import * as fs from 'fs';
 
 const isLegacy = false;
-const terra = new LocalTerra(isLegacy);
+const paloma = new LocalPaloma(isLegacy);
 
-// test1 key from localterra accounts
-const { test1 } = terra.wallets;
+// test1 key from localpaloma accounts
+const { test1 } = paloma.wallets;
 
 async function main(): Promise<void> {
   const storeCode = new MsgStoreCode(
@@ -25,7 +25,7 @@ async function main(): Promise<void> {
   const storeCodeTx = await test1.createAndSignTx({
     msgs: [storeCode],
   });
-  const storeCodeTxResult = await terra.tx.broadcastBlock(storeCodeTx);
+  const storeCodeTxResult = await paloma.tx.broadcastBlock(storeCodeTx);
 
   console.log(storeCodeTxResult);
 
@@ -49,7 +49,7 @@ async function main(): Promise<void> {
   const instantiateTx = await test1.createAndSignTx({
     msgs: [instantiate],
   });
-  const instantiateTxResult = await terra.tx.broadcastBlock(instantiateTx);
+  const instantiateTxResult = await paloma.tx.broadcastBlock(instantiateTx);
 
   console.log(instantiateTxResult);
 
@@ -70,15 +70,15 @@ async function main(): Promise<void> {
   const executeTx = await test1.createAndSignTx({
     msgs: [execute],
   });
-  const executeTxResult = await terra.tx.broadcastBlock(executeTx);
+  const executeTxResult = await paloma.tx.broadcastBlock(executeTx);
   console.log(executeTxResult);
 
-  console.log(await terra.wasm.contractQuery(contractAddress, { "get_count": {} }));
+  console.log(await paloma.wasm.contractQuery(contractAddress, { "get_count": {} }));
 
-  const [history, _] = await terra.wasm.contractHistory(contractAddress);
+  const [history, _] = await paloma.wasm.contractHistory(contractAddress);
   console.log(history.map(h => h.toData()));
-  console.log(JSON.stringify(await terra.wasm.contractInfo(contractAddress)));
-  console.log(JSON.stringify(await terra.wasm.codeInfo(+codeId)));
+  console.log(JSON.stringify(await paloma.wasm.contractInfo(contractAddress)));
+  console.log(JSON.stringify(await paloma.wasm.codeInfo(+codeId)));
 
 }
 

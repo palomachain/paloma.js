@@ -1,10 +1,10 @@
 import { JSONSerializable } from '../../../util/json';
 import { Coin } from '../../Coin';
 import { AccAddress, ValAddress } from '../../bech32';
-// import { Any } from '@terra-money/legacy.proto/google/protobuf/any';
-// import { MsgBeginRedelegate as MsgBeginRedelegate_pb } from '@terra-money/legacy.proto/cosmos/staking/v1beta1/tx';
-import { Any } from '@terra-money/terra.proto/google/protobuf/any';
-import { MsgBeginRedelegate as MsgBeginRedelegate_pb } from '@terra-money/terra.proto/cosmos/staking/v1beta1/tx';
+// import { Any } from '@palomachain/legacy.proto/google/protobuf/any';
+// import { MsgBeginRedelegate as MsgBeginRedelegate_pb } from '@palomachain/legacy.proto/cosmos/staking/v1beta1/tx';
+import { Any } from '@palomachain/paloma.proto/google/protobuf/any';
+import { MsgBeginRedelegate as MsgBeginRedelegate_pb } from '@palomachain/paloma.proto/cosmos/staking/v1beta1/tx';
 /**
  * A delegator can choose to redelegate their bonded Luna and transfer a delegation
  * amount from one validator to another. Unlike undelegating, redelegations do not incur

@@ -10,11 +10,13 @@ import { bech32 } from 'bech32';
 describe('AccAddress', () => {
   it('validates account address', () => {
     expect(
-      AccAddress.validate('terravaloper1pdx498r0hrc2fj36sjhs8vuhrz9hd2cw0yhqtk')
+      AccAddress.validate(
+        'palomavaloper1pdx498r0hrc2fj36sjhs8vuhrz9hd2cw0yhqtk'
+      )
     ).toBe(false);
 
     expect(
-      AccAddress.validate('terra1pdx498r0h7c2fj36sjhs8vu8rz9hd2cw0tmam9')
+      AccAddress.validate('paloma1pdx498r0h7c2fj36sjhs8vu8rz9hd2cw0tmam9')
     ).toBe(false); // bad checksum
 
     expect(
@@ -22,46 +24,44 @@ describe('AccAddress', () => {
     ).toBe(false);
 
     const words = bech32.toWords(Buffer.from('foobar', 'utf8'));
-    const badAddress = bech32.encode('terra', words);
+    const badAddress = bech32.encode('paloma', words);
 
     expect(AccAddress.validate(badAddress)).toBe(false);
     // normal account address
     expect(
-      AccAddress.validate('terra1pdx498r0hrc2fj36sjhs8vuhrz9hd2cw0tmam9')
+      AccAddress.validate('paloma17tsule2h035rlqwjs2q828kjtwf59f8w5ntz9s')
     ).toBe(true);
     // contract account address
     expect(
-      AccAddress.validate(
-        'terra1uj9dm5xdm34fy5xwd84lfakarcnlpxw0ppgy7vpsruj0vtks29cqn0ztcs'
-      )
+      AccAddress.validate('paloma17tsule2h035rlqwjs2q828kjtwf59f8w5ntz9s')
     ).toBe(true);
   });
 
   it('converts from validator address', () => {
     expect(
-      AccAddress.fromValAddress(
-        'terravaloper1pdx498r0hrc2fj36sjhs8vuhrz9hd2cw0yhqtk'
-      )
-    ).toEqual('terra1pdx498r0hrc2fj36sjhs8vuhrz9hd2cw0tmam9');
+      AccAddress.fromValAddress('paloma17tsule2h035rlqwjs2q828kjtwf59f8w5ntz9s')
+    ).toEqual('paloma17tsule2h035rlqwjs2q828kjtwf59f8w5ntz9s');
   });
 });
 
 describe('ValAddress', () => {
   it('validates validator address', () => {
     const words = bech32.toWords(Buffer.from('foobar', 'utf8'));
-    const badAddress = bech32.encode('terravaloper', words);
+    const badAddress = bech32.encode('palomavaloper', words);
 
     expect(ValAddress.validate(badAddress)).toBe(false);
 
     expect(
-      ValAddress.validate('terravaloper1pdx498r0hrc2fj36sjhs8vuhrz9hd2cw0yhqtk')
+      ValAddress.validate(
+        'palomavaloper17tsule2h035rlqwjs2q828kjtwf59f8wmru7nr'
+      )
     ).toBe(true);
   });
 
   it('converts from account address', () => {
     expect(
-      ValAddress.fromAccAddress('terra1pdx498r0hrc2fj36sjhs8vuhrz9hd2cw0tmam9')
-    ).toEqual('terravaloper1pdx498r0hrc2fj36sjhs8vuhrz9hd2cw0yhqtk');
+      ValAddress.fromAccAddress('paloma17tsule2h035rlqwjs2q828kjtwf59f8w5ntz9s')
+    ).toEqual('palomavaloper17tsule2h035rlqwjs2q828kjtwf59f8wmru7nr');
   });
 });
 
@@ -69,23 +69,23 @@ describe('AccPubKey', () => {
   it('validates account pubkey', () => {
     expect(
       AccPubKey.validate(
-        'terravaloperpub1addwnpepqt8ha594svjn3nvfk4ggfn5n8xd3sm3cz6ztxyugwcuqzsuuhhfq5y7accr'
+        'palomavaloperpub1addwnpepqt8ha594svjn3nvfk4ggfn5n8xd3sm3cz6ztxyugwcuqzsuuhhfq5y7accr'
       )
     ).toBe(false);
 
     const words = bech32.toWords(Buffer.from('foobar', 'utf8'));
-    const badPubKey = bech32.encode('terrapub', words);
+    const badPubKey = bech32.encode('palomapub', words);
 
     expect(AccPubKey.validate(badPubKey)).toBe(false);
     expect(
-      AccPubKey.validate('terrapub1x46rqay4d3cssq8gxxvqz8xt6nwlz4tdh39t77')
+      AccPubKey.validate('palomapub17tsule2h035rlqwjs2q828kjtwf59f8wlpqfun')
     ).toBe(true);
   });
 
   it('converts from validator pubkey', () => {
     expect(
-      AccPubKey.fromAccAddress('terra1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v')
-    ).toEqual('terrapub1x46rqay4d3cssq8gxxvqz8xt6nwlz4tdh39t77');
+      AccPubKey.fromAccAddress('paloma17tsule2h035rlqwjs2q828kjtwf59f8w5ntz9s')
+    ).toEqual('palomapub17tsule2h035rlqwjs2q828kjtwf59f8wlpqfun');
   });
 });
 
@@ -93,34 +93,35 @@ describe('ValPubKey', () => {
   it('validates validator pubkey', () => {
     expect(
       ValPubKey.validate(
-        'terravaloperpub12g4nkvsjjnl0t7fvq3hdcw7y8dc9fq69gvd5ag'
+        'palomavaloperpub17tsule2h035rlqwjs2q828kjtwf59f8w3zfjvp'
       )
     ).toBe(true);
 
     const words = bech32.toWords(Buffer.from('foobar', 'utf8'));
-    const badPubKey = bech32.encode('terrapub', words);
+    const badPubKey = bech32.encode('palomapub', words);
 
     expect(ValPubKey.validate(badPubKey)).toBe(false);
     expect(
-      ValPubKey.validate('terravaloper12g4nkvsjjnl0t7fvq3hdcw7y8dc9fq69nyeu9q')
+      ValPubKey.validate('palomavaloper12g4nkvsjjnl0t7fvq3hdcw7y8dc9fq69nyeu9q')
     ).toBe(false);
   });
 
   it('converts from validator address', () => {
     expect(
       ValPubKey.fromValAddress(
-        'terravaloper12g4nkvsjjnl0t7fvq3hdcw7y8dc9fq69nyeu9q'
+        'palomavaloper17tsule2h035rlqwjs2q828kjtwf59f8wmru7nr'
       )
-    ).toEqual('terravaloperpub12g4nkvsjjnl0t7fvq3hdcw7y8dc9fq69gvd5ag');
+    ).toEqual('palomavaloperpub17tsule2h035rlqwjs2q828kjtwf59f8w3zfjvp');
   });
 });
 
 describe('ValConsAddress', () => {
   it('validate validator consensus address', () => {
-    expect(
-      ValConsAddress.validate(
-        'terravalcons1relcztayk87c3r529rqf3fwdmn8hr6rhcgyrxd'
-      )
-    ).toBeTruthy();
+    const vals = bech32.decode(
+      'palomavaloper17tsule2h035rlqwjs2q828kjtwf59f8wmru7nr'
+    );
+    const valConAddress = bech32.encode('palomavalcons', vals.words);
+
+    expect(ValConsAddress.validate(valConAddress)).toBeTruthy();
   });
 });

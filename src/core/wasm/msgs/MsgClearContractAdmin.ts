@@ -1,8 +1,8 @@
 import { JSONSerializable } from '../../../util/json';
 import { AccAddress } from '../../bech32';
-import { Any } from '@terra-money/terra.proto/google/protobuf/any';
-import { MsgClearContractAdmin as MsgClearContractAdmin_legacy_pb } from '@terra-money/legacy.proto/terra/wasm/v1beta1/tx';
-import { MsgClearAdmin as MsgClearAdmin_pb } from '@terra-money/terra.proto/cosmwasm/wasm/v1/tx';
+import { Any } from '@palomachain/paloma.proto/google/protobuf/any';
+import { MsgClearContractAdmin as MsgClearContractAdmin_legacy_pb } from '@palomachain/legacy.proto/terra/wasm/v1beta1/tx';
+import { MsgClearAdmin as MsgClearAdmin_pb } from '@palomachain/paloma.proto/cosmwasm/wasm/v1/tx';
 
 export class MsgClearContractAdmin extends JSONSerializable<
   MsgClearContractAdmin.Amino,
@@ -86,7 +86,7 @@ export class MsgClearContractAdmin extends JSONSerializable<
   public packAny(isClassic?: boolean): Any {
     if (isClassic) {
       return Any.fromPartial({
-        typeUrl: '/terra.wasm.v1beta1.MsgClearContractAdmin',
+        typeUrl: '/paloma.wasm.v1beta1.MsgClearContractAdmin',
         value: MsgClearContractAdmin_legacy_pb.encode(
           this.toProto(isClassic) as MsgClearContractAdmin_legacy_pb
         ).finish(),
@@ -134,7 +134,7 @@ export class MsgClearContractAdmin extends JSONSerializable<
   public toData(isClassic?: boolean): MsgClearContractAdmin.Data {
     if (isClassic) {
       return {
-        '@type': '/terra.wasm.v1beta1.MsgClearContractAdmin',
+        '@type': '/paloma.wasm.v1beta1.MsgClearContractAdmin',
         admin: this.admin,
         contract: this.contract,
       };
@@ -165,7 +165,7 @@ export namespace MsgClearContractAdmin {
     };
   }
   export interface DataV1 {
-    '@type': '/terra.wasm.v1beta1.MsgClearContractAdmin';
+    '@type': '/paloma.wasm.v1beta1.MsgClearContractAdmin';
     admin: string;
     contract: string;
   }

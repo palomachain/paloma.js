@@ -19,11 +19,11 @@ describe('MsgBeginRedelegate', () => {
     const send = MsgBeginRedelegate.fromAmino({
       type: 'cosmos-sdk/MsgBeginRedelegate',
       value: {
-        delegator_address: 'terra1y4umfuqfg76t8mfcff6zzx7elvy93jtp4xcdvw',
+        delegator_address: 'paloma1y4umfuqfg76t8mfcff6zzx7elvy93jtp4xcdvw',
         validator_src_address:
-          'terravaloper1guxk2q4wn92fw0mchx2rhsenjvq0hj9pzp0ngt',
+          'palomavaloper1guxk2q4wn92fw0mchx2rhsenjvq0hj9pzp0ngt',
         validator_dst_address:
-          'terravaloper1fa2gmum9kl9ms73hnrhvg0rkk0s9jvqxpunyr3',
+          'palomavaloper1fa2gmum9kl9ms73hnrhvg0rkk0s9jvqxpunyr3',
         amount: {
           denom: 'uluna',
           amount: '8102024952',
@@ -32,22 +32,22 @@ describe('MsgBeginRedelegate', () => {
     });
 
     expect(send).toMatchObject({
-      delegator_address: 'terra1y4umfuqfg76t8mfcff6zzx7elvy93jtp4xcdvw',
+      delegator_address: 'paloma1y4umfuqfg76t8mfcff6zzx7elvy93jtp4xcdvw',
       validator_src_address:
-        'terravaloper1guxk2q4wn92fw0mchx2rhsenjvq0hj9pzp0ngt',
+        'palomavaloper1guxk2q4wn92fw0mchx2rhsenjvq0hj9pzp0ngt',
       validator_dst_address:
-        'terravaloper1fa2gmum9kl9ms73hnrhvg0rkk0s9jvqxpunyr3',
+        'palomavaloper1fa2gmum9kl9ms73hnrhvg0rkk0s9jvqxpunyr3',
       amount: new Coin('uluna', '8102024952'),
     });
 
     expect(send.toAmino()).toMatchObject({
       type: 'cosmos-sdk/MsgBeginRedelegate',
       value: {
-        delegator_address: 'terra1y4umfuqfg76t8mfcff6zzx7elvy93jtp4xcdvw',
+        delegator_address: 'paloma1y4umfuqfg76t8mfcff6zzx7elvy93jtp4xcdvw',
         validator_src_address:
-          'terravaloper1guxk2q4wn92fw0mchx2rhsenjvq0hj9pzp0ngt',
+          'palomavaloper1guxk2q4wn92fw0mchx2rhsenjvq0hj9pzp0ngt',
         validator_dst_address:
-          'terravaloper1fa2gmum9kl9ms73hnrhvg0rkk0s9jvqxpunyr3',
+          'palomavaloper1fa2gmum9kl9ms73hnrhvg0rkk0s9jvqxpunyr3',
         amount: {
           denom: 'uluna',
           amount: '8102024952',

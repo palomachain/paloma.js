@@ -1,8 +1,8 @@
 import { JSONSerializable } from '../../../../util/json';
-import { Header as Header_pb } from '@terra-money/terra.proto/ibc/lightclients/tendermint/v1/tendermint';
+import { Header as Header_pb } from '@palomachain/paloma.proto/ibc/lightclients/tendermint/v1/tendermint';
 import { Height } from '../../core/client/Height';
 import { SignedHeader, ValidatorSet } from '../../msgs/client/tendermint/types';
-import { Any } from '@terra-money/terra.proto/google/protobuf/any';
+import { Any } from '@palomachain/paloma.proto/google/protobuf/any';
 
 /**
  * Header defines the Tendermint client consensus Header.

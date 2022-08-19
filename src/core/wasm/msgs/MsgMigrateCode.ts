@@ -1,7 +1,7 @@
 import { JSONSerializable } from '../../../util/json';
 import { AccAddress } from '../../bech32';
-import { Any } from '@terra-money/terra.proto/google/protobuf/any';
-import { MsgMigrateCode as MsgMigrateCode_legacy_pb } from '@terra-money/legacy.proto/terra/wasm/v1beta1/tx';
+import { Any } from '@palomachain/paloma.proto/google/protobuf/any';
+import { MsgMigrateCode as MsgMigrateCode_legacy_pb } from '@palomachain/legacy.proto/terra/wasm/v1beta1/tx';
 import * as Long from 'long';
 
 export class MsgMigrateCode extends JSONSerializable<
@@ -81,7 +81,7 @@ export class MsgMigrateCode extends JSONSerializable<
       throw new Error('Not supported for the network');
     }
     return Any.fromPartial({
-      typeUrl: '/terra.wasm.v1beta1.MsgMigrateCode',
+      typeUrl: '/paloma.wasm.v1beta1.MsgMigrateCode',
       value: MsgMigrateCode_legacy_pb.encode(this.toProto(isClassic)).finish(),
     });
   }
@@ -113,7 +113,7 @@ export class MsgMigrateCode extends JSONSerializable<
     }
     const { sender, code_id, wasm_byte_code } = this;
     return {
-      '@type': '/terra.wasm.v1beta1.MsgMigrateCode',
+      '@type': '/paloma.wasm.v1beta1.MsgMigrateCode',
       sender,
       code_id: code_id.toFixed(),
       wasm_byte_code,
@@ -132,7 +132,7 @@ export namespace MsgMigrateCode {
   }
 
   export interface Data {
-    '@type': '/terra.wasm.v1beta1.MsgMigrateCode';
+    '@type': '/paloma.wasm.v1beta1.MsgMigrateCode';
     code_id: string;
     sender: AccAddress;
     wasm_byte_code: string;

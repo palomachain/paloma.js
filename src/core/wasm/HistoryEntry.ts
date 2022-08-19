@@ -3,7 +3,7 @@ import {
   ContractCodeHistoryOperationType,
   contractCodeHistoryOperationTypeFromJSON,
   contractCodeHistoryOperationTypeToJSON,
-} from '@terra-money/terra.proto/cosmwasm/wasm/v1/types';
+} from '@palomachain/paloma.proto/cosmwasm/wasm/v1/types';
 import { JSONSerializable, removeNull } from '../../util/json';
 import * as Long from 'long';
 import { AbsoluteTxPosition } from './AbsoluteTxPosition';

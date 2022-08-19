@@ -2,15 +2,15 @@ import { OracleAPI } from './OracleAPI';
 import { Dec } from '../../../core/numeric';
 import { LCDClient } from '../LCDClient';
 
-const terra = new LCDClient({
+const paloma = new LCDClient({
   chainID: 'pisco-1',
-  URL: 'https://pisco-lcd.terra.dev/',
+  URL: 'http://localhost:1317/',
 });
-const oracle = new OracleAPI(terra);
+const oracle = new OracleAPI(paloma);
 
 describe('OracleAPI', () => {
   it('parameters', async () => {
-    if (terra.config.isClassic) {
+    if (paloma.config.isClassic) {
       // only classic network has param query
       await expect(oracle.parameters()).resolves.toMatchObject({
         vote_period: expect.any(Number),

@@ -17,7 +17,7 @@ interface Option extends CreateTxOptions {
   purgeQueue?: boolean; // default true
   sequence?: number;
   accountNumber?: number;
-  isClassic?: boolean; // default fase. set to true when you intract with terra Classic
+  isClassic?: boolean; // default fase. set to true when you intract with paloma Classic
 }
 
 interface SignBytesOption {
@@ -134,7 +134,7 @@ export class Extension {
    * Request to Station Extension for connecting a wallet
    *
    * @return {string}     name      'onConnect'
-   * @return {AccAddress} payload   Terra account address
+   * @return {AccAddress} payload   Paloma account address
    */
   connect(): number {
     return this.send('connect');

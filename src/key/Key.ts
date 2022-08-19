@@ -10,7 +10,7 @@ import {
   PublicKey,
 } from '../core';
 import { SignatureV2 } from '../core/SignatureV2';
-import { SignMode } from '@terra-money/terra.proto/cosmos/tx/signing/v1beta1/signing';
+import { SignMode } from '@palomachain/paloma.proto/cosmos/tx/signing/v1beta1/signing';
 
 /**
  * Abstract key interface that provides transaction signing features and Bech32 address
@@ -29,7 +29,7 @@ export abstract class Key {
   public abstract sign(payload: Buffer): Promise<Buffer>;
 
   /**
-   * Terra account address. `paloma-` prefixed.
+   * Paloma account address. `paloma-` prefixed.
    */
   public get accAddress(): AccAddress {
     if (!this.publicKey) {
@@ -40,7 +40,7 @@ export abstract class Key {
   }
 
   /**
-   * Terra validator address. `palomavaloper-` prefixed.
+   * Paloma validator address. `palomavaloper-` prefixed.
    */
   public get valAddress(): ValAddress {
     if (!this.publicKey) {

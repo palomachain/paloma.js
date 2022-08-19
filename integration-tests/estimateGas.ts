@@ -9,12 +9,12 @@ async function main() {
 	});
 
 	const { data: gasPrices } = await Axios.get(
-		'https://bombay-fcd.terra.dev/v1/txs/gas_prices'
+		'https://bombay-fcd.paloma.dev/v1/txs/gas_prices'
 	);
 
 	const bombay = new LCDClient({
 		chainID: 'bombay-12',
-		URL: 'https://bombay-lcd.terra.dev',
+		URL: 'https://bombay-lcd.paloma.dev',
 		gasPrices: { uluna: gasPrices.uluna }
 	});
 
@@ -22,15 +22,15 @@ async function main() {
 
 	// create a simple message that moves coin balances
 	const send = new MsgSend(
-		'terra1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v',
-		'terra17lmam6zguazs5q5u6z5mmx76uj63gldnse2pdp',
+		'paloma1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v',
+		'paloma17lmam6zguazs5q5u6z5mmx76uj63gldnse2pdp',
 		{ uluna: 1312029 }
 	);
 
 	const tx = await wallet
 	.createTx({
 		msgs: [send],
-		memo: 'test from terra.js!',
+		memo: 'test from paloma.js!',
 	});
 
 

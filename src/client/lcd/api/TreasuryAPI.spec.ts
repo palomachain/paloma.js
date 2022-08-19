@@ -2,22 +2,22 @@ import { TreasuryAPI } from './TreasuryAPI';
 import { Coins, Dec, PolicyConstraints } from '../../../core';
 import { LCDClient } from '../LCDClient';
 
-const terra = new LCDClient({
+const paloma = new LCDClient({
   chainID: 'pisco-1',
-  URL: 'https://pisco-lcd.terra.dev/',
+  URL: 'http://localhost:1317/',
 });
-const treasury = new TreasuryAPI(terra);
+const treasury = new TreasuryAPI(paloma);
 
 describe('TreasuryAPI', () => {
   it('taxCaps', async () => {
-    if (terra.config.isClassic) {
+    if (paloma.config.isClassic) {
       // only classic network has param query
       await expect(treasury.taxCaps()).resolves.toBeInstanceOf(Coins);
     }
   });
 
   it('taxCap (uusd)', async () => {
-    if (terra.config.isClassic) {
+    if (paloma.config.isClassic) {
       // only classic network has param query
       await expect(
         treasury.taxCap('uusd').then(r => r.toData())
@@ -29,14 +29,14 @@ describe('TreasuryAPI', () => {
   });
 
   it('taxCap (invalid)', async () => {
-    if (terra.config.isClassic) {
+    if (paloma.config.isClassic) {
       // only classic network has param query
       await expect(treasury.taxCap('x')).rejects.toThrow();
     }
   });
 
   it('parameters', async () => {
-    if (terra.config.isClassic) {
+    if (paloma.config.isClassic) {
       // only classic network has param query
       await expect(treasury.parameters()).resolves.toMatchObject({
         tax_policy: expect.any(PolicyConstraints),

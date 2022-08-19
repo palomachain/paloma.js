@@ -1,8 +1,8 @@
 import { JSONSerializable, removeNull } from '../../../util/json';
 import { AccAddress } from '../../bech32';
-import { Any } from '@terra-money/terra.proto/google/protobuf/any';
-import { MsgMigrateContract as MsgMigrateContract_legacy_pb } from '@terra-money/legacy.proto/terra/wasm/v1beta1/tx';
-import { MsgMigrateContract as MsgMigrateContract_pb } from '@terra-money/terra.proto/cosmwasm/wasm/v1/tx';
+import { Any } from '@palomachain/paloma.proto/google/protobuf/any';
+import { MsgMigrateContract as MsgMigrateContract_legacy_pb } from '@palomachain/legacy.proto/terra/wasm/v1beta1/tx';
+import { MsgMigrateContract as MsgMigrateContract_pb } from '@palomachain/paloma.proto/cosmwasm/wasm/v1/tx';
 import * as Long from 'long';
 
 export class MsgMigrateContract extends JSONSerializable<
@@ -122,7 +122,7 @@ export class MsgMigrateContract extends JSONSerializable<
   public packAny(isClassic?: boolean): Any {
     if (isClassic) {
       return Any.fromPartial({
-        typeUrl: '/terra.wasm.v1beta1.MsgMigrateContract',
+        typeUrl: '/paloma.wasm.v1beta1.MsgMigrateContract',
         value: MsgMigrateContract_legacy_pb.encode(
           this.toProto(isClassic) as MsgMigrateContract_legacy_pb
         ).finish(),
@@ -178,7 +178,7 @@ export class MsgMigrateContract extends JSONSerializable<
     const { admin, contract, new_code_id, migrate_msg } = this;
     if (isClassic) {
       return {
-        '@type': '/terra.wasm.v1beta1.MsgMigrateContract',
+        '@type': '/paloma.wasm.v1beta1.MsgMigrateContract',
         admin,
         contract,
         new_code_id: new_code_id.toFixed(),
@@ -217,7 +217,7 @@ export namespace MsgMigrateContract {
   }
 
   export interface DataV1 {
-    '@type': '/terra.wasm.v1beta1.MsgMigrateContract';
+    '@type': '/paloma.wasm.v1beta1.MsgMigrateContract';
     admin: AccAddress;
     contract: AccAddress;
     new_code_id: string;

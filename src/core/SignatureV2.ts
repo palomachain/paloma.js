@@ -5,8 +5,8 @@ import {
   SignMode as SignMode_pb,
   signModeFromJSON,
   signModeToJSON,
-} from '@terra-money/terra.proto/cosmos/tx/signing/v1beta1/signing';
-import { MultiSignature } from '@terra-money/terra.proto/cosmos/crypto/multisig/v1beta1/multisig';
+} from '@palomachain/paloma.proto/cosmos/tx/signing/v1beta1/signing';
+import { MultiSignature } from '@palomachain/paloma.proto/cosmos/crypto/multisig/v1beta1/multisig';
 
 export class SignatureV2 {
   constructor(

@@ -2,8 +2,8 @@ import { JSONSerializable } from '../../../util/json';
 import { GenericAuthorization } from './GenericAuthorization';
 import { SendAuthorization } from './SendAuthorization';
 import { StakeAuthorization } from './StakeAuthorization';
-import { Any } from '@terra-money/terra.proto/google/protobuf/any';
-import { Grant as Grant_pb } from '@terra-money/terra.proto/cosmos/authz/v1beta1/authz';
+import { Any } from '@palomachain/paloma.proto/google/protobuf/any';
+import { Grant as Grant_pb } from '@palomachain/paloma.proto/cosmos/authz/v1beta1/authz';
 
 export class AuthorizationGrant extends JSONSerializable<
   AuthorizationGrant.Amino,

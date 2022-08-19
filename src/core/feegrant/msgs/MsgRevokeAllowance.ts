@@ -1,7 +1,7 @@
 import { JSONSerializable } from '../../../util/json';
 import { AccAddress } from '../../bech32';
-import { Any } from '@terra-money/terra.proto/google/protobuf/any';
-import { MsgRevokeAllowance as MsgRevokeAllowance_pb } from '@terra-money/terra.proto/cosmos/feegrant/v1beta1/tx';
+import { Any } from '@palomachain/paloma.proto/google/protobuf/any';
+import { MsgRevokeAllowance as MsgRevokeAllowance_pb } from '@palomachain/paloma.proto/cosmos/feegrant/v1beta1/tx';
 
 /**
  * MsgRevokeAllowance remove permission any existing Allowance from Granter to Grantee.

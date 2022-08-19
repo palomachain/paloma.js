@@ -1,11 +1,11 @@
 {
   "name": "@palomachain/paloma.js",
-  "version": "3.0.15",
+  "version": "3.0.17",
   "description": "The JavaScript SDK for paloma",
   "license": "MIT",
   "author": "",
   "keywords": [
-    "terra",
+    "paloma",
     "stablecoin",
     "cryptocurrency",
     "blockchain",
@@ -30,6 +30,7 @@
   "scripts": {
     "build": "tsc --module commonjs && webpack --mode production",
     "test": "jest",
+    "integration_test": "INTEGRATION=TRUE jest",
     "format": "prettier --check ./src/**/*.ts",
     "format:fix": "prettier --write ./src/**/*.ts",
     "lint": "eslint src --ext .js,.ts",
@@ -83,8 +84,8 @@
     "webpack-cli": "^4.3.0"
   },
   "dependencies": {
-    "@terra-money/legacy.proto": "npm:@terra-money/terra.proto@^0.1.7",
-    "@terra-money/terra.proto": "~2.0.0",
+    "@palomachain/legacy.proto": "npm:@palomachain/paloma.proto@^0.1.6",
+    "@palomachain/paloma.proto": "~2.1.1",
     "axios": "^0.26.1",
     "bech32": "^2.0.0",
     "bip32": "^2.0.6",

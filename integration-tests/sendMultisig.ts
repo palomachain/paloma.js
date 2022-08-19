@@ -36,7 +36,7 @@ async function main() {
   ]);
 
   const bombay = new LCDClient({
-    chainID: 'localterra',
+    chainID: 'localpaloma',
     URL: 'http://localhost:1317',
     gasPrices: { uusd: 0.38 },
   });
@@ -47,7 +47,7 @@ async function main() {
   // create a simple message that moves coin balances
   const send = new MsgSend(
     address,
-    'terra1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v',
+    'paloma1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v',
     { uusd: 100000 }
   );
 

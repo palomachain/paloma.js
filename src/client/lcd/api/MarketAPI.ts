@@ -4,15 +4,15 @@ import { LCDClient } from '../LCDClient';
 import { BaseAPI } from './BaseAPI';
 
 export interface MarketParams {
-  /** Number of blocks it takes for the Terra & Luna pools to naturally "reset" towards
+  /** Number of blocks it takes for the Paloma & Luna pools to naturally "reset" towards
    * equilibrium through automated pool replenishing.
    */
   pool_recovery_period: number;
 
-  /** Initial starting size of both Luna and Terra mint liquidity pools. */
+  /** Initial starting size of both Luna and Paloma mint liquidity pools. */
   base_pool: Dec;
 
-  /** Minimum spread charged on Terra<>Luna swaps to prevent leaking value from front-running attacks. */
+  /** Minimum spread charged on Paloma<>Luna swaps to prevent leaking value from front-running attacks. */
   min_stability_spread: Dec;
 }
 
@@ -50,12 +50,12 @@ export class MarketAPI extends BaseAPI {
     };
 
     return this.c
-      .get<{ return_coin: Coin.Data }>(`/terra/market/v1beta1/swap`, params)
+      .get<{ return_coin: Coin.Data }>(`/paloma/market/v1beta1/swap`, params)
       .then(d => Coin.fromData(d.return_coin));
   }
 
   /**
-   * Gets current value of the pool delta, which is used to determine Terra<>Luna swap rates.
+   * Gets current value of the pool delta, which is used to determine Paloma<>Luna swap rates.
    */
   public async poolDelta(params: APIParams = {}): Promise<Dec> {
     if (!this.lcd.config.isClassic) {
@@ -63,11 +63,11 @@ export class MarketAPI extends BaseAPI {
     }
 
     return this.c
-      .get<{ terra_pool_delta: Numeric.Input }>(
-        `/terra/market/v1beta1/terra_pool_delta`,
+      .get<{ paloma_pool_delta: Numeric.Input }>(
+        `/paloma/market/v1beta1/paloma_pool_delta`,
         params
       )
-      .then(d => new Dec(d.terra_pool_delta));
+      .then(d => new Dec(d.paloma_pool_delta));
   }
 
   /**
@@ -80,7 +80,7 @@ export class MarketAPI extends BaseAPI {
 
     return this.c
       .get<{ params: MarketParams.Data }>(
-        `/terra/market/v1beta1/params`,
+        `/paloma/market/v1beta1/params`,
         params
       )
       .then(({ params: d }) => ({

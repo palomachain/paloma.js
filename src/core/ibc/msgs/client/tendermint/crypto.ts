@@ -1,5 +1,5 @@
-import { Proof as Proof_pb } from '@terra-money/terra.proto/tendermint/crypto/proof';
-import { PublicKey as PublicKey_pb } from '@terra-money/terra.proto/tendermint/crypto/keys';
+import { Proof as Proof_pb } from '@palomachain/paloma.proto/tendermint/crypto/proof';
+import { PublicKey as PublicKey_pb } from '@palomachain/paloma.proto/tendermint/crypto/keys';
 import * as Long from 'long';
 import { JSONSerializable } from '../../../../../util/json';
 
