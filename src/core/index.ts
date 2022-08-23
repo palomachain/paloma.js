@@ -13,6 +13,7 @@ export * from './ValidatorSet';
 export * from './Deposit';
 export * from './SignatureV2';
 export * from './MultiSignature';
+export * from './Crypt';
 
 // Auth
 export * from './auth/Account';

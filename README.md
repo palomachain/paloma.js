@@ -96,6 +96,15 @@ const lcd = new LCDClient({
 
 ```
 
+### Encrypt Key
+```js
+const crypt = new Crypt();
+const encrypted_key_to_store = crypt.encrypt('KEY_VALUE', 'PASSWORD');
+
+const key_value = crypt.decrypt(encrypted_key_to_store, 'PASSWORD');
+
+```
+
 ### Broadcasting transactions
 
 
