@@ -1,6 +1,22 @@
-# The JavaScript SDK for Paloma
+<h1 align="center">Welcome to The JavaScript SDK for Paloma 👋</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+  <a href="https://docs.palomachain.com" target="_blank">
+    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
+  </a>
+  <a href="#" target="_blank">
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  </a>
+  <a href="https://twitter.com/paloma_chain" target="_blank">
+    <img alt="Twitter: paloma_chain" src="https://img.shields.io/twitter/follow/paloma_chain.svg?style=social" />
+  </a>
+</p>
 
+> Your Javascript Library for Paloma
 
+### 🏠 [Homepage](https://www.palomachain.com)
+
+### 📚 [Docs](https://docs.palomachain.com)
 
 Paloma.js is a JavaScript SDK for writing applications that interact with the Paloma blockchain from either Node.js, browser, or React Native environments and provides simple abstractions over core data structures, serialization, key management, and API request generation.
 
@@ -32,7 +48,7 @@ import { LCDClient, MsgSend, MnemonicKey } from '@palomachain/paloma.js';
 
 const lcd = new LCDClient({
   URL: 'http://rbox.palomachain.com:1317',
-  chainID: 'paloma-testnet-6',
+  chainID: '< CHECK DOCS PAGE>',
   classic: true,
 });
 
@@ -88,7 +104,7 @@ import { LCDClient, Coin } from '@palomachain/paloma.js';
 
 const lcd = new LCDClient({
   URL: 'http://rbox.palomachain.com:1317',
-  chainID: 'paloma-testnet-6',
+  chainID: '< CHECK DOCS PAGE>',
   classic: true,
 });
 
@@ -120,7 +136,7 @@ const mk = new MnemonicKey({
 
 const lcd = new LCDClient({
   URL: 'http://rbox.palomachain.com:1317',
-  chainID: 'paloma-testnet-6',
+  chainID: '< CHECK DOCS PAGE>',
   classic: true,
 });
 
