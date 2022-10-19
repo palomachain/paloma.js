@@ -47,7 +47,7 @@ Paloma.js can be used in Node.js, as well as inside the browser.
 import { LCDClient, MsgSend, MnemonicKey } from '@palomachain/paloma.js';
 
 const lcd = new LCDClient({
-  URL: 'http://rbox.palomachain.com:1317',
+  URL: 'https://lcd.testnet.palomaswap.com',
   chainID: '< CHECK DOCS PAGE>',
   classic: true,
 });
@@ -103,7 +103,7 @@ import { LCDClient, Coin } from '@palomachain/paloma.js';
 
 
 const lcd = new LCDClient({
-  URL: 'http://rbox.palomachain.com:1317',
+  URL: 'https://lcd.testnet.palomaswap.com',
   chainID: '< CHECK DOCS PAGE>',
   classic: true,
 });
@@ -135,7 +135,7 @@ const mk = new MnemonicKey({
 
 
 const lcd = new LCDClient({
-  URL: 'http://rbox.palomachain.com:1317',
+  URL: 'https://lcd.testnet.palomaswap.com',
   chainID: '< CHECK DOCS PAGE>',
   classic: true,
 });
