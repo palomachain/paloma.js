@@ -97,7 +97,7 @@ async function main() {
     ),
   ]);
   console.log(JSON.stringify(tx.toData()));
-  bombay.tx.broadcastBlock(tx).then(console.log);
+  bombay.tx.broadcastSync(tx).then(console.log);
 }
 
 main().catch(console.error);
