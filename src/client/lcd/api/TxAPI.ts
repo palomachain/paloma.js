@@ -472,15 +472,14 @@ export class TxAPI extends BaseAPI {
     };
   }
 
-  /**
-   * Broadcast the transaction using the "block" mode, waiting for its inclusion in the blockchain.
-   * @param tx transaction to broadcast
-   */
+  /* DEPRECATED PLEASE DONT USE. USE broadcastAsync INSTEAD */
   public async broadcastBlock(tx: Tx): Promise<BlockTxBroadcastResult> {
     return this._broadcast<{ tx_response: BlockTxBroadcastResult.Data }>(
       tx,
       'BROADCAST_MODE_BLOCK'
     ).then(({ tx_response: d }) => {
+      console.log('DEPRECATED PLEASE DONT USE. USE broadcastAsync INSTEAD');
+
       const blockResult: BlockTxBroadcastResult = {
         txhash: d.txhash,
         raw_log: d.raw_log,

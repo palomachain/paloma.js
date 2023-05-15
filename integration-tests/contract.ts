@@ -25,7 +25,7 @@ async function main(): Promise<void> {
   const storeCodeTx = await test1.createAndSignTx({
     msgs: [storeCode],
   });
-  const storeCodeTxResult = await paloma.tx.broadcastBlock(storeCodeTx);
+  const storeCodeTxResult = await paloma.tx.broadcastSync(storeCodeTx);
 
   console.log(storeCodeTxResult);
 
@@ -49,7 +49,7 @@ async function main(): Promise<void> {
   const instantiateTx = await test1.createAndSignTx({
     msgs: [instantiate],
   });
-  const instantiateTxResult = await paloma.tx.broadcastBlock(instantiateTx);
+  const instantiateTxResult = await paloma.tx.broadcastSync(instantiateTx);
 
   console.log(instantiateTxResult);
 
@@ -70,7 +70,7 @@ async function main(): Promise<void> {
   const executeTx = await test1.createAndSignTx({
     msgs: [execute],
   });
-  const executeTxResult = await paloma.tx.broadcastBlock(executeTx);
+  const executeTxResult = await paloma.tx.broadcastSync(executeTx);
   console.log(executeTxResult);
 
   console.log(await paloma.wasm.contractQuery(contractAddress, { "get_count": {} }));
