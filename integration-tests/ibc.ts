@@ -11,7 +11,7 @@ async function main() {
     `Txs Page 1: ${JSON.stringify(
       (
         await bombay.tx.search({
-          events: [{ key: 'tx.height', value: '12' }],
+          query: [{ key: 'tx.height', value: '12' }],
           'pagination.limit': '50',
         })
       ).txs.map(tx => tx)
