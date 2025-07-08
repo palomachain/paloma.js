@@ -11,7 +11,7 @@ async function main() {
     `Txs Page 1: ${JSON.stringify(
       (
         await paloma.tx.search({
-          events: [{ key: 'tx.height', value: '8343' },
+          query: [{ key: 'tx.height', value: '8343' },
 			  {key:'message.sender', value:'paloma1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38p'}],
           'pagination.limit': '100',
         })
@@ -23,7 +23,7 @@ async function main() {
     `Txs Page 2: ${JSON.stringify(
       (
         await paloma.tx.search({
-          events: [{ key: 'tx.height', value: '8345' }],
+          query: [{ key: 'tx.height', value: '8345' }],
           'pagination.limit': '50',
           'pagination.offset': '1',
         })
